@@ -1,0 +1,22 @@
+[background arg="res://Sprites/black_screen.png" fade="0.0"]
+[music path="res://SFX/car-driving-ambience-6365.mp3" fade="5.0" volume="6.0"]
+[wait time="5.0"]
+[lspeed=0.7]...
+You must realize how ugly you look[pause=0.6], right?
+[lspeed=0.7]...
+You should cover up[pause=0.5], a lot of people will be watching tonight.
+We need as many eyes as possible.
+This must spread.
+[lspeed=0.7]...
+Think about it.
+[wait time="5.0"]
+[music fade="5.0" volume="0.0"]
+[wait time="5.0"]
+[sound path="res://SFX/car_stop.mp3" volume="0.0"]
+[wait time="3.0"]
+I'll get the equipment out of the trunk[pause=0.6], go find out what's going on.\
+[n]Be quick[pause=0.6], the reception will be at its peak in about fifteen minutes.\
+[n]Talk to me when you're ready.
+[wait time="3.0"]
+[background fade="4.0"]
+[wait time="4.0"]

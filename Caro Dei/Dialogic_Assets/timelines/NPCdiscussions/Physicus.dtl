@@ -1,0 +1,47 @@
+join Physicus right
+Physicus: [lspeed=0.4]...
+Physicus: [lspeed=0.4]...
+Physicus: [lspeed=0.4]...[lspeed]oh
+Physicus: Apologies[pause=0.2], I seem to have lost track of time.
+Physicus: There are bandages in the box.[pause=0.2] They are meant for the [color=red]tendril[/color][pause=0.2], so please return any usable portions after you finish your broadcast.
+Physicus: [lspeed=0.4]...
+Physicus: Oh[pause=0.6] I see[lspeed=0.2]...[lspeed]well[pause=0.4] if you are sure.
+Physicus: Unfortunately I only arrived three[lspeed=0.3]...[lspeed]four[pause=0.3] days ago.
+Physicus: Getting gas was no issue[pause=0.4], plenty of people were willing to donate to get me here sooner.[pause=0.4] It was the driving that was the issue. [n]There were meant to be more with me[pause=0.4], I suspect they likewise had many issues with travel.
+Physicus: Most viable paths were blocked by the [color=red]tendril[/color]. It may have been faster to simply walk and climb instead.
+Physicus: ...Ah, apologies again, you are not interested in my travels.
+Physicus: What I mean to say is that I have not yet had time to investigate the bone or flesh of the [color=red]tendril[/color].[n]I've yet to even get a sample[pause=0.3], they've both proved to be near impossible to cut.\
+\
+[n]Instead[pause=0.4], I have opted to look into the nature of the blood.
+Physicus: It's[lspeed=0.4]...[lspeed=0.1] intriguing.
+Physicus: To the naked eye[pause=0.4], it looks[pause=0.2], feels[pause=0.2], smells[pause=0.2], and[lspeed=0.4]...[lspeed][pause=0.2] tastes[pause=0.5] exactly like human blood.
+Physicus: But upon closer inspection we can see[lspeed=0.2]...[lspeed] [pause=0.4]actually[pause=0.2] it is easier to show.
+Physicus: Look into the microscope.
+leave Physicus
+[background arg="res://Sprites/blood_sample.png" fade="1.0"]
+[wait time="1.0"]
+[wait_input]
+[wait time="1.0"]
+Physicus: At this level of magnification we should be able to see individual red blood cells[pause=0.4], yet it looks no different than without the aid of equipment.
+Physicus: Zooming in further reveals more of the same[pause=0.4], a deep sea of red.
+Physicus: There is supposably stronger equipment in an city nearby. [pause=0.5] However it is a long drive even before factoring in the branches[pause=0.2] and I have much more to do here first.
+[background fade="1.0"]
+join Physicus right
+Physicus: Focusing on the effects of the blood now[pause=0.2], it does not seem to be immediately biohazardous.[pause=0.5] In fact I would say that the opposite is true.
+Physicus: When any living flora consumes the blood[pause=0.2], it alters their chemistry to produ-[pause=0.3][lspeed=0.2]...[lspeed]
+Physicus: It[lspeed=0.3]...[lspeed][pause=0.3]accelerates their growth[pause=0.3], essentially.
+Physicus: See that sapling?[pause=0.3] I planted it from a single apple seed the day I got here. [pause=0.3]I gave it no water[pause=0.3], and of course no sunlight.
+Physicus: Only the blood.
+Physicus: And in three[pause=0.3], four short days it has sprouted and began to produce fruit.
+Physicus: Traces of the blood appear in every sample I have taken from the plant, fruit[pause=0.2], leaf[pause=0.2], bark[pause=0.2], sap.
+Physicus: Yesterday[pause=0.4], I ate one of the apples.[pause=0.5] It tasted no different than a regular apple[pause=0.3], and I feel as normal as ever.
+Physicus: However[pause=0.4], I have since taken samples of my own blood[pause=0.2], skin[pause=0.2], hair[pause=0.2], and waste.
+Physicus: Traces of the blood were found in each[pause=0.6], except the waste.
+Physicus: I took many more to ensure I did not simply get a bad sample.[pause=0.4] And in each there was no trace of the blood.
+Physicus: It seems to me that[pause=0.6] once the blood is inside[pause=0.5], it does not leave.
+Physicus: [lspeed=0.6]...
+Physicus: Again[pause=0.3], I feel as normal as ever.[pause=0.3] But we have yet to see if any long term effects emerge from this.
+Physicus: It is truly unfortunate the satellites must align now[pause=0.3], even just a week more of experimentation would yield so much more information.
+Physicus: For now[pause=0.3], mention the effects of the blood on flora[pause=0.3], but be sure to say that there may be[pause=0.3], as of yet undiscovered[pause=0.3], side effects.
+Physicus: You must inform everybody on the potential dangers of the [color=red]tendril[/color].
+set {character_checklist.Physicus} = true

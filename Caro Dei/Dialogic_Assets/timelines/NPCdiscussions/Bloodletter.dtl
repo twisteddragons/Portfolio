@@ -1,0 +1,39 @@
+join Bloodletter right
+Bloodletter: Oh shit[pause=0.7], Hi.
+Bloodletter: ...
+Bloodletter: I'm not looking for any trouble[pause=0.7], I'm just getting a bit of this blood, then I'll be gone[pause=0.4] ok?
+Bloodletter: ...
+Bloodletter: Oh[pause=0.7] uh,[pause=0.7] well[pause=0.4] I use it for my crops.
+Bloodletter: I mean you've seen what it does to plants. [pause=0.6] It's wasted just sitting here unused.
+Bloodletter: And yes,[pause=0.3] I've overheard them talking about it,[pause=0.3] I know it ain't exactly[lspeed=0.3]...[lspeed]explanable.
+Bloodletter: But what, everyone has just gotta sit with a thumb up their collective ass until they[pause=0.7] solve[pause=0.1] this[pause=1] thing????
+Bloodletter: I have too many people relying on my crops to do that.
+Bloodletter: ...
+Bloodletter: Yes I have, this is my second visit.
+Bloodletter: First time was when it dropped.
+Bloodletter: I was obviously curious.[pause=0.3] There were a ton of smaller tendrils by our settlement so[pause=0.3] I volunteered to find where they start.
+Bloodletter: When I got here I noticed the grass around the wound and [pause=0.8]I knew I had to try it[pause=0.4] for my crops.
+Bloodletter: I didn't have anything to carry it with then[pause=0.5], so I tried taking it home by holding some in my hands.
+Bloodletter: For[pause=0.3] five[pause=0.3] miles.
+Bloodletter: About a mile away I ate shit[pause=0.5], got it all over myself.
+Bloodletter: I thought[pause=0.3] "Oh [pause=0.2]that's fine[pause=0.3], I'll cut the tendrils near us".
+Bloodletter: Turns out the skin is like diamond[pause=0.3], broke a couple of my knives.
+Bloodletter: Didn't have time to go back[pause=0.7], had to go take care of my crops as they were due to produce soon.
+Bloodletter: I washed myself in the crop water first[pause=0.3], not like the plants are gonna complain.
+Bloodletter: And oh[pause=0.7] my[pause=0.7] fuckin'[pause=0.7] god.
+Bloodletter: I haven't seen that much green in decades.
+Bloodletter: Lotta people depend on my crops you see[pause=0.4], easily over a hundred.
+Bloodletter: Usually we barely produce enough for everyone[pause=0.3], people go hungry often.[pause=0.8] It's[lspeed=0.3]...[lspeed] awful.
+Bloodletter: But with less than a HANDFUL of this[pause=0.9] [color=red]ICHOR[/color][pause=0.4] and suddenly everyone has full stomachs again.
+Bloodletter: Ok I'm exaggerating[pause=0.3], but at least everyone got to eat.
+Bloodletter: A whole bucket of this stuff?[pause=0.3] Given to the crops over weeks? [pause=0.2] That could bring back proper meals[pause=0.5], wouldn't that be some shit.
+Bloodletter: Anyway,[pause=0.3] When I got here today I noticed a cut that wasn't there previously.
+Bloodletter: Next to that cut was a tree branch.[pause=0.7] It looks like it fell in the storm today.
+Bloodletter: It seems that[pause=0.3], for whatever reason[pause=0.3], wood can cut through the skin.\
+[n]I sharped a stick and tested it a couple times[pause=0.6], it cuts through like butter.
+Bloodletter: Very weird[pause=0.9] but who am I to complain[pause=0.4], it saves me a trip.
+Bloodletter: From what I've heard though, this is the only pre-existing wound[pause=0.3], so no one else knows what this blood can do.
+Bloodletter: And not many are gonna try to cut it open with wood specifically unless they get lucky[pause=0.4] like I did.
+Bloodletter: You have to tell them how to open this thing,[pause=0.2] and to use the blood.
+Bloodletter: You gotta tell everyone about the wood [pause=0.3]and the [color=red]ichor[/color].
+set {character_checklist.Bloodletter} = true

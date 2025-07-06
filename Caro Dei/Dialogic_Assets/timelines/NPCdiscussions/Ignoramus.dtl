@@ -1,0 +1,10 @@
+join Ignoramus right
+Ignoramus: Aw man[pause=0.3], you found me.\
+[n]Oh[pause=0.3], you're not Jason.\
+[n]Are you here to play hide and seek too?\
+[n]Jason and I have been playing allllll day! It's soooooo much better now that this [color=red]jungle gym[/color] is here!\
+[n]Before[pause=0.3], there weren't many nice spots[pause=0.3], and we got bored quickly.[pause=0.6] But now they're EVERYWHERE. [pause=0.5]It's so cool.\
+[n]Mom doesn't like us playing around here though[pause=0.3], so promise you won't tell her[pause=0.4], ok?\
+[n]Now[pause=0.3], I gotta be quiet so that Jason doesn't find me. [pause=0.6] But you should play with your friends sometime! [pause=0.3]And be sure to tell people about how awesome it is.\
+[n]You should tell EVERYONE to play in the [color=red]jungle gym[/color].
+set {character_checklist.Ignoramus} = true

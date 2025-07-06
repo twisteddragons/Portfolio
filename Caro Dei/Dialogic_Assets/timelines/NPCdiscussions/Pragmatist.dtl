@@ -1,0 +1,28 @@
+join Pragmatist right
+Pragmatist: Oh[pause=0.6], hello.
+Pragmatist: You must be the one who will inform the populus[pause=0.6] correct?
+Pragmatist: ...
+Pragmatist: Well[pause=0.4], it's very[lspeed=0.1] wonderful[lspeed] to meet you.
+Pragmatist: It's a very beautiful night[pause=0.4], don't you think?
+Pragmatist: And I hope you don't mind me saying[pause=0.4], you look beautiful as well.
+Pragmatist: I just came to watch the broadcast in person[pause=0.4], please pay me no mind.
+Pragmatist: ...
+Pragmatist: My demeanor?[pause=0.7] Well[pause=0.2] you see[pause=0.4], it is my utmost belief that we[pause=0.4], that humanity[pause=0.4], has been saved.
+Pragmatist: This object[pause=0.4], you see[pause=0.4], is our [color=red]posterity's limb[/color].[pause=0.4] It is definitive proof that humanity shall persist for generations upon generations!
+Pragmatist: It comes from the future[pause=0.4], you see[pause=0.4], from a species of human whose bodies have transcended the third dimension and whose feet leave their footsteps across time.
+Pragmatist: Now I know for certain[pause=0.4], the events of recent years are but a hiccup in what will be a long and prosperous reign over our universe.
+Pragmatist: I saw it forming in the sky[pause=0.4], you see.
+Pragmatist: Slowly[pause=0.6], from nothing[pause=0.5] it grew[pause=0.4], until it ate up the sky and reached beyond my vision.
+Pragmatist: But there was no wound to be seen[pause=0.4], at first.
+Pragmatist: Then[pause=0.4], a loud crack[pause=0.4], a swift strike from an unseen blade[pause=0.4], and to Earth it fell.
+Pragmatist: This is why I hold the belief that we have been saved,[pause=0.4] you see.
+Pragmatist: If you do not understand the implications[pause=0.2], let me tell you a story.
+Pragmatist: Imagine living in a two dimensional world.[pause=0.6] Your body is a circle[pause=0.6], your vision is a line.
+Pragmatist: Suddenly[pause=0.7] a sphere from the third dimension rolls across your vision.
+Pragmatist: It appears to you as a small circle that slowly grows[pause=0.4], stagnates[pause=0.4], then shrinks[pause=0.8], before disappearing entirely.
+Pragmatist: But what if[pause=0.2], instead[pause=0.2], part of the sphere was severed[pause=0.6], and left in the circle's world?
+Pragmatist: This [color=red]limb[/color][pause=0.3] is a part of that sphere.[pause=0.7] And we[pause=0.3] are that circle.
+Pragmatist: Our posterity is just out of sight[pause=0.4], viewing our whole world[pause=0.2] and history[pause=0.2] all at once[pause=0.7], watching over us[pause=0.8], ensuring our survival.
+Pragmatist: We are safe.[pause=0.8] Our future is guaranteed.
+Pragmatist: Tell the populus whatever you wish[pause=0.6], it doesn't matter.[pause=0.6] Our future has been insured by the [color=red]limb[/color].
+set {character_checklist.Pragmatist} = true

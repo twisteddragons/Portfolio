@@ -1,0 +1,18 @@
+join Muscle right
+Muscle: ‘Oo must be the reporter.[pause=0.6] Good.
+Muscle: Go in.
+Muscle: There should be bandages somewhere by the way[pause=0.3], I'd ask around.
+Muscle: But 'urry, people are gettin’ scared[pause=0.6], an’ anxious.
+Muscle: They need an explanation for this shit, [pause=0.6][lspeed=0.5]now[lspeed]. [pause=0.6]They ain't knowin' wut to do.
+Muscle: [lspeed=0.7]...
+Muscle: ‘Oo know, I’m wunna the lucky phew who still got some of ah family.
+Muscle: My son.
+Muscle: 'e's alone at ‘ome right now, waitin’ for yer broadcast.
+Muscle: 'e's[lspeed=0.7]...[lspeed]terrified.
+Muscle: 'e's sayin' that[pause=0.6][lspeed=0.5]...[lspeed]Sayin' that [color=red]God[/color] has died.
+Muscle: 'Oo gotta tell my boy that [color=red]God[/color] is alive,[pause=0.4] and that 'e's watchin' over us.
+Muscle: [lspeed=0.7]...
+Muscle: Maybe 'e's right[lspeed=0.3]...[lspeed]I can't say.
+Muscle: But even if 'e's right.[pause=0.6] You can't be tellin' everyone that [color=red]God[/color] is [pause=0.4]dead.
+Muscle: ‘Oo must tell e'erybody that[pause=0.6] whatever this thing is,[pause=0.6] it [lspeed=0.15]isn't[lspeed] [color=red]God [/color].
+set {character_checklist.Muscle} = true

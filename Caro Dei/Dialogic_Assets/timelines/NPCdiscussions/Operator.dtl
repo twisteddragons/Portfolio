@@ -1,0 +1,90 @@
+join Operator right
+if {character_checklist.Zealot} == true and {character_checklist.Bloodletter} == true and {character_checklist.Geologist} == true and {character_checklist.Muscle} == true and {character_checklist.Physicus} == true and {character_checklist.Pragmatist} == true:
+	Operator: Alright, I got everything I need[pause=0.5], are you ready to start?
+	- Yes
+		Operator: Alright[pause=0.5], let's do it.
+		leave Operator
+		[background arg="res://Sprites/black_screen.png" fade="5.0"]
+		[wait time="7.0"]
+		Saviour: "Hello survivors, I hope you can hear me well"\
+[n]"I'm sure you're all anxious,[pause=0.5] so I will waste no time"\
+[n]"What you see behind me is indeed the 'severance point' of what many people are referring to as[pause=0.3], the [color=red]Caro Dei[/color]"\
+[n]"Now please[pause=0.4], listen carefully.[pause=0.8] What I am about to say is extremely important"\
+[n]"We won't get another chance to broadcast for a very long time"\
+[n]"You must take what you hear today and spread it as far as you can"\
+[n]"Tell everyone you can[pause=0.4], everyone who will listen"\
+[n]"Let us start"
+		Saviour: [n]"I arrived here to the point of severance...
+		- "Last week"
+			Saviour: [n+]a week ago[pause=0.5], and have been talking extensively with multiple experts since"
+		- "Today"
+			Saviour: [n+]about thirty minutes ago[pause=0.4], I have since gathered what knowledge there is from the lone expert who could make it"
+		Saviour: "The tendril is incredibly long[pause=0.4], it's reach is...
+		- "Confined to North America"
+			Saviour: [n+]all of North America.[pause=0.4] We have confirmed that no part of the tendril have reached elsewhere in the world"
+		- "Possibly worldwide"
+			Saviour: [n+]all of North America and possibly worldwide.[pause=0.4] We have yet to converse with any other continent to confirm"
+		- "Worldwide"
+			Saviour: [n+]worldwide.[pause=0.4] There have been reports of the tendril from every remaining settlement we have contacted"
+		Saviour: "There have been...
+		- "At least three thousand confirmed deaths"
+			Saviour: [n+]three thousand confirmed casualties from the [color=red]Caro Dei's[/color] impact, and likely many more"
+		- "No confirmed deaths"
+			Saviour: [n+]miraculously[pause=0.6], zero casualties from the [color=red]Caro Dei's[/color] impact. [pause=0.5]Experts are still searching for an explanation for this phenomenon"
+		Saviour: "The origin of the [color=red]Caro Dei[/color] is...
+		- "The body of God"
+			Saviour: [n+]God[pause=1], who has lost part of Himself due to the faults of humankind"
+		- "The tail of the Devil"
+			Saviour: [n+]the Devil[pause=1], who has cast his own tail to the world in an attempt of controlling us"
+		- "From the future"
+			Saviour: [n+]our future selves[pause=1], who have thrown us a lifeline in our darkest hour"
+		- "A giant beast"
+			Saviour: [n+]benign[pause=1], likely some kind of large creature"
+		- "Unknown"
+			Saviour: [n+]yet to be confirmed"
+		Saviour: "Inside the [color=red]Caro Dei[/color] is a large amount of a red substance. it...
+		- "Can grow crops with no side effects"
+			Saviour: [n+]greatly accelerates plant growth[pause=0.4], with any crops produced being completely safe for consumptuion"
+		- "Can grow crops with potential effects"
+			Saviour: [n+]greatly accelerates plant growth[pause=0.4], however[pause=0.3], any crops produced may have side effects if consumed"
+		- "Can grow crops that will damn us to Hell"
+			Saviour: [n+]greatly accelerates plant growth[pause=0.4], however[pause=0.3], any crops produced will curse you to an eternity of suffering"
+		- "Acts exactly like human blood"
+			Saviour: [n+]has no disguishing features from human blood"
+		Saviour: "However[pause=0.3], to even get at the blood you must breach the [color=red]Caro Dei's[/color] skin, which...
+		- "Is indestructible"
+			Saviour: [n+]has shown remarkable resilience to even the toughest and sharpest blades"
+		- "Can be cut with wood"
+			Saviour: [n+]can only be pierced using wood[pause=0.4], any common branch or stick will do"
+		Saviour: "Finally[pause=0.5], we know you are all wondering what to do regarding the [color=red]Caro Dei[/color][pause=0.8]"\
+[n]"It is our highest opinion that you should...
+		- "Use the blood to grow your crops"
+			Saviour: [n+]attempt to gather the blood and use it to grow your crops[pause=0.6], it may be our last chance at survival"
+		- "Ignore it"
+			Saviour: [n+]leave it alone[pause=0.6], your daily lives should remain unaffected as you fight to survive"
+		- "Play hide and seek" | [if {character_checklist.Ignoramus} == true] [else="hide"]
+			Saviour: [n+]use it for a giant game of hide and seek[pause=0.6], I have it on good authority that it provides many excellent hiding spots"
+		Saviour: "I know that times are hard[pause=0.5], and that the appearance of the [color=red]Caro Dei[/color] is frightening"\
+[n]"But remember...
+		- "God loves you"
+			Saviour: [n+]God[pause=0.4], as weak as he may currently be[pause=0.4], still loves you all"
+		- "We are watched over"
+			Saviour: [n+]there are beings beyond our comprehension watching over us[pause=0.4], ensuring our survival"
+		- "We are strong"
+			Saviour: [n+]humankind is resilient[pause=0.4], we have the power to adapt and survive any hardship thrown at us"
+		[wait time="3.0"]
+		Operator: [lspeed=0.4]...[lspeed][pause=0.6]and we're off.\
+[n]Hopefully enough people were able to listen in.\
+[n][lspeed=0.4]...[lspeed]\
+[n]Do you think that was the right thing to say???\
+[n][lspeed=0.4]...[lspeed]\
+[n]Well[pause=0.6], I guess we'll find out eventually.\
+[n]Let's go.
+		[signal arg_type="dict" arg="{"volume":-64}"]
+		[wait time="8.0"]
+		do SceneManager.start_credits()
+	- No
+		Operator: Alright[pause=0.5], hurry though.[pause=0.8] We're running out of time.
+		[end_timeline]
+else:
+	Operator: I'm still getting ready[pause=0.5], have you talked to everyone yet?

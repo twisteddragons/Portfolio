@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2nnw5rv6ty61"]
+
+[ext_resource type="Theme" uid="uid://b0gis883mbm8w" path="res://Resources/menu_theme.tres" id="1_8lgl0"]
+[ext_resource type="Script" uid="uid://diqq4fsyrn01v" path="res://Scripts/credits.gd" id="2_pkn82"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8lgl0")
+script = ExtResource("2_pkn82")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]
+
+
+
+Made By:
+
+Walker Jones
+
+
+
+
+
+Special Thanks:
+
+Nubia De La Torre
+
+[/center]"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcnvnl5g07ohd"]
+
+[ext_resource type="Script" uid="uid://bick2m8he24gp" path="res://Scripts/main.gd" id="1_lpnjk"]
+[ext_resource type="Texture2D" uid="uid://mehmdvs220df" path="res://Sprites/mockup.png" id="1_v7x8o"]
+[ext_resource type="PackedScene" uid="uid://nk6agt1f2coc" path="res://Prefabs/npc.tscn" id="2_lwj6k"]
+[ext_resource type="PackedScene" uid="uid://cqwjnwlxqrgc3" path="res://Prefabs/Player.tscn" id="3_815on"]
+[ext_resource type="FontFile" uid="uid://boiv8a7lhdnv3" path="res://Fonts/VCR_OSD_MONO_1.001.ttf" id="5_dcep3"]
+[ext_resource type="AudioStream" uid="uid://bcg1xvntguf8v" path="res://SFX/light_rain.ogg" id="5_dudjv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k23no"]
+size = Vector2(59, 494)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lpnjk")
+
+[node name="Environment" type="Sprite2D" parent="."]
+position = Vector2(1920, 180)
+texture = ExtResource("1_v7x8o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1226, 273)
+limit_left = 0
+limit_top = 0
+limit_right = 3840
+limit_bottom = 200
+editor_draw_limits = true
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(3869, 166)
+shape = SubResource("RectangleShape2D_k23no")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-29, 188)
+shape = SubResource("RectangleShape2D_k23no")
+
+[node name="NPCS" type="Node2D" parent="."]
+
+[node name="Bloodletter" parent="NPCS" instance=ExtResource("2_lwj6k")]
+position = Vector2(3798, 279)
+dialogue_title = "Bloodletter"
+NPC_name = "The Bloodletter"
+
+[node name="Physicus" parent="NPCS" instance=ExtResource("2_lwj6k")]
+position = Vector2(2809, 279)
+dialogue_title = "Physicus"
+NPC_name = "The Physicus"
+
+[node name="Geologist" parent="NPCS" instance=ExtResource("2_lwj6k")]
+position = Vector2(1493, 274)
+dialogue_title = "Geologist"
+NPC_name = "The Geologist"
+
+[node name="CollisionShape2D" parent="NPCS/Geologist" index="0"]
+position = Vector2(7.5, -3.125)
+
+[node name="Muscle" parent="NPCS" instance=ExtResource("2_lwj6k")]
+position = Vector2(2204, 279)
+dialogue_title = "Muscle"
+NPC_name = "The Muscle"
+
+[node name="Zealot" parent="NPCS" instance=ExtResource("2_lwj6k")]
+position = Vector2(2121, 278)
+dialogue_title = "Zealot"
+NPC_name = "The Zealot"
+
+[node name="Pragmatist" parent="NPCS" instance=ExtResource("2_lwj6k")]
+position = Vector2(136, 273)
+dialogue_title = "Pragmatist"
+NPC_name = "The Pragmatist"
+
+[node name="Operator" parent="NPCS" instance=ExtResource("2_lwj6k")]
+position = Vector2(983, 273)
+dialogue_title = "Operator"
+NPC_name = "The Operator"
+
+[node name="CollisionShape2D" parent="NPCS/Operator" index="0"]
+position = Vector2(5.5, 1)
+
+[node name="Ignoramus" parent="NPCS" instance=ExtResource("2_lwj6k")]
+position = Vector2(2414, 280)
+dialogue_title = "Ignoramus"
+NPC_name = "The Ignoramus"
+
+[node name="Player" parent="." instance=ExtResource("3_815on")]
+position = Vector2(1226, 273)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Label" type="Label" parent="Player"]
+visible = false
+offset_left = -318.0
+offset_top = -273.0
+offset_right = -142.0
+offset_bottom = -250.0
+theme_override_fonts/font = ExtResource("5_dcep3")
+theme_override_font_sizes/font_size = 18
+text = "Press ESC again to quit"
+
+[node name="AudioStreamPlayerRain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dudjv")
+volume_db = -64.0
+autoplay = true
+mix_target = 1
+
+[editable path="NPCS/Bloodletter"]
+[editable path="NPCS/Physicus"]
+[editable path="NPCS/Geologist"]
+[editable path="NPCS/Muscle"]
+[editable path="NPCS/Zealot"]
+[editable path="NPCS/Pragmatist"]
+[editable path="NPCS/Operator"]
+[editable path="NPCS/Ignoramus"]

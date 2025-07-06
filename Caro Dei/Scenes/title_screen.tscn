@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://ix03fc144084"]
+
+[ext_resource type="Theme" uid="uid://b0gis883mbm8w" path="res://Resources/menu_theme.tres" id="1_gecjk"]
+[ext_resource type="Script" uid="uid://dflid8hqlkuxm" path="res://Scripts/title_screen.gd" id="1_jaleq"]
+[ext_resource type="Texture2D" uid="uid://cq38ln8d3ytrq" path="res://Sprites/title_screen.png" id="2_vuuh1"]
+[ext_resource type="AudioStream" uid="uid://b6c1p14bc20p1" path="res://addons/dialogic/Example Assets/sound-effects/typing1.wav" id="4_48761"]
+[ext_resource type="AudioStream" uid="uid://ddmxufwf3vxfm" path="res://SFX/pad-heavenly-bells-236409.mp3" id="5_c04de"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gecjk")
+script = ExtResource("1_jaleq")
+
+[node name="TitleScreen" type="Sprite2D" parent="."]
+texture = ExtResource("2_vuuh1")
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -147.0
+offset_right = 62.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 13
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Quit"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_48761")
+volume_db = 4.262
+
+[node name="AngelicMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_c04de")
+volume_db = -60.0
+autoplay = true
+
+[connection signal="mouse_entered" from="VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

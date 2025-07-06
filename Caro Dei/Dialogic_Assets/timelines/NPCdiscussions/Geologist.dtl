@@ -1,0 +1,44 @@
+join Geologist right
+Geologist: Hey,[pause=0.3] I appreciate you coming.[pause=0.7] You get here alright?
+Geologist: [lspeed=0.5]...
+Geologist: No you're right[pause=0.4], we don't have much time.
+Geologist: I'll try to be quick.[pause=0.4] Where did I[lspeed=0.8]...
+Geologist: Ah[pause=0.4], here it is. [pause=0.8] Take a look.
+leave Geologist
+[background arg="res://Sprites/chalkboard.png" fade="1.0"]
+[wait time="1.0"]
+[wait_input]
+Geologist: These are all the branches I saw from the helicopter on my flight here[pause=0.4], plus all of the east coast I've surveyed so far.
+Geologist: From what I can tell[pause=0.4], this[color=red] thing [/color] spreads all over America[pause=0.4], and likely spreads to both Canada and Mexico as well.
+Geologist: If you look at ex-New York you'll notice a very large branch heading into the ocean.
+Geologist: The settlement by it claims it runs all the way to Africa or Europe[pause=0.4], but we obviously can't confirm or deny it at the moment.
+Geologist: ...
+Geologist: Well...[pause=0.4] yes[pause=0.4], sort of.
+Geologist: An object that large falling into the ocean from that height would undeniably cause a tsunami[pause=0.7], several[pause=0.3], actually.
+Geologist: So under those pretenses I wouldn't have even mentioned these claims[pause=0.7], however.
+Geologist: An object this large falling on LAND should have created[pause=0.9] COUNTLESS craters.
+Geologist: And yet[pause=0.2], every site of impact is as pristine as the day before.
+Geologist: So given that information[pause=0.4], it's definitely possible it reaches to the east[pause=0.4], and maybe the world.
+Geologist: I don't know what to make of it.
+[background fade="0.5"]
+join Geologist right
+Geologist: Either way[pause=0.2], that's all I have.
+Geologist: ...
+Geologist: [lspeed=0.5]...
+Geologist: [pause=0.6]Actually...
+Geologist: [pause=0.2]Look[pause=0.4], I'm not sure if I should mention this but[lspeed=0.5]...[lspeed]
+Geologist: I mean like[pause=0.6], it shouldn't[lspeed=0.5]...[lspeed][pause=0.6]can't[lspeed=0.5]...[lspeed][pause=0.6]I [pause=0.6]don't[lspeed=0.5]...[lspeed]
+Geologist: [lspeed=0.4]...[lspeed]
+Geologist: Statistically[pause=0.4], at least three thousand people should have been killed in the areas I've seen alone.[pause=0.4] But[lspeed=0.5]...[lspeed]
+Geologist: I've yet to see[pause=0.3] or hear[pause=0.3] of even a SINGLE person who's been crushed.
+Geologist: Most buildings are likewise untouched.[pause=0.4] The few that did meet their end were uninhabited.
+Geologist: I have[lspeed=0.4]...[lspeed]no[pause=0.2] explanation for this phenomenon.
+Geologist: It's[lspeed=0.4]...[lspeed]It's as if it were intentionally placed to minimize damage.
+Geologist: Now[pause=0.3], I think you shouldn't tell the people this.
+Geologist: This situation is already alien enough.[pause=0.4] It would only lead to more panic.
+Geologist: You must project confidence in your speech.[pause=0.4] In fact[pause=0.2], I would[lspeed=0.4]...[lspeed]lie[pause=0.2] a little.
+Geologist: Just say you got here like[pause=0.2] the day after it dropped[pause=0.4], and that you've been conferring with us since.
+Geologist: If people know we're just as lost and confused as they are[pause=0.7], who knows what damage that could do.
+Geologist: You should keep the story as benign as possible.[pause=0.4] Say a giant arm or leg fell from the sky[pause=0.4], and we're confident it's nothing to worry about.
+Geologist: You have to tell them all[pause=0.4] that's it's simply[pause=0.2] some[pause=0.2] large[pause=0.2] [color=red]thing[/color].
+set {character_checklist.Geologist} = true

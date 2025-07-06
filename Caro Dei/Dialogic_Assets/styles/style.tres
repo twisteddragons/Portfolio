@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=14 format=3 uid="uid://febxpajp7npx"]
+
+[ext_resource type="Script" uid="uid://xe2ofdexi888" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_n4d5l"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_nlwka"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="3_dk47w"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_ilk0j"]
+[ext_resource type="PackedScene" uid="uid://dnw3ilr5ks10i" path="res://Dialogic_Assets/Layers/VisualNovelTextbox/custom_visual_novel_textbox.tscn" id="5_vyhno"]
+[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="7_jutk8"]
+[ext_resource type="Script" uid="uid://cpspcdmsrlysn" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_ku3de"]
+
+[sub_resource type="Resource" id="Resource_cnhnx"]
+script = ExtResource("1_n4d5l")
+overrides = {
+"global_bg_color": "Color(0, 0, 0, 1)",
+"global_font": "\"res://Fonts/VCR_OSD_MONO_1.001.ttf\"",
+"global_font_size": "20.0"
+}
+
+[sub_resource type="Resource" id="Resource_3xk47"]
+script = ExtResource("1_n4d5l")
+scene = ExtResource("2_nlwka")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_d4i3m"]
+script = ExtResource("1_n4d5l")
+scene = ExtResource("3_dk47w")
+overrides = {
+"portrait_size_mode": "0"
+}
+
+[sub_resource type="Resource" id="Resource_3n0qx"]
+script = ExtResource("1_n4d5l")
+scene = ExtResource("4_ilk0j")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_vg043"]
+script = ExtResource("1_n4d5l")
+scene = ExtResource("5_vyhno")
+overrides = {
+"box_size": "Vector2(550, 110)",
+"name_label_box_modulate": "Color(1, 1, 1, 1)",
+"name_label_box_use_global_color": "false",
+"next_indicator_animation": "2",
+"next_indicator_size": "Vector2(29, 30)",
+"next_indicator_texture": "\"res://Sprites/arrow.png\"",
+"typing_sounds_volume": "-4.0"
+}
+
+[sub_resource type="Resource" id="Resource_qgh7k"]
+script = ExtResource("1_n4d5l")
+scene = ExtResource("7_jutk8")
+overrides = {
+"boxes_min_size": "Vector2(0, 30)",
+"boxes_offset": "Vector2(0, -50)",
+"boxes_stylebox_focused": "\"res://Resources/button_focus.tres\"",
+"boxes_stylebox_hovered": "\"res://Resources/button_hover.tres\"",
+"boxes_stylebox_normal": "\"res://Resources/button_normal.tres\"",
+"boxes_stylebox_pressed": "\"res://Resources/button_pressed.tres\"",
+"boxes_v_separation": "15.0",
+"text_color_hovered": "Color(1, 1, 1, 1)"
+}
+
+[resource]
+script = ExtResource("10_ku3de")
+name = "style"
+layer_list = Array[String](["10", "11", "12", "13", "15"])
+layer_info = {
+"": SubResource("Resource_cnhnx"),
+"10": SubResource("Resource_3xk47"),
+"11": SubResource("Resource_d4i3m"),
+"12": SubResource("Resource_3n0qx"),
+"13": SubResource("Resource_vg043"),
+"15": SubResource("Resource_qgh7k")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_n4d5l")]([])
+metadata/_latest_layer = "15"
