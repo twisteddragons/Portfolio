@@ -22,7 +22,7 @@ Used instead of Godot's built-in tilemap editor as it contains more features.
 
 ![Screenshot04](https://github.com/user-attachments/assets/a6a5a605-880a-48c0-98da-e37d8703a665)
 
-Still image of some visuals created via fragment shaders.
+Still image of some visuals created via fragment shaders written in [GLSL](https://en.wikipedia.org/wiki/OpenGL_Shading_Language#:~:text=OpenGL%20Shading%20Language%20(GLSL)%20is,on%20the%20C%20programming%20language.).
 
 The whirlpool was created by converting UV coordinates to polar coordinates and utilizing [trigonometric shaping functions](https://thebookofshaders.com/05/) to create a [logarithmic spiral](https://en.wikipedia.org/wiki/Logarithmic_spiral#:~:text=A%20logarithmic%20spiral%2C%20equiangular%20spiral,(%22ewige%20Linie%22).) and then coloured with a colour gradient. 
 
