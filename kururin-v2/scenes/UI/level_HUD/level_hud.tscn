@@ -1,0 +1,439 @@
+[gd_scene load_steps=20 format=3 uid="uid://dvn8isufj3dfl"]
+
+[ext_resource type="Script" uid="uid://cuclu6qq5yy7e" path="res://scenes/UI/level_HUD/level_hud.gd" id="1_djojk"]
+[ext_resource type="Texture2D" uid="uid://bnvebp0vkwsvp" path="res://scenes/UI/level_HUD/art/TV health.png" id="1_nv6xc"]
+[ext_resource type="Texture2D" uid="uid://yvoqcw0ghn7h" path="res://scenes/UI/level_HUD/art/nest_back.png" id="2_fbi0t"]
+[ext_resource type="Texture2D" uid="uid://cg3jl6dtof5tr" path="res://scenes/UI/level_HUD/art/nest_front.png" id="3_jdesr"]
+[ext_resource type="Texture2D" uid="uid://5ssylqoymmkt" path="res://scenes/UI/level_HUD/art/egg.png" id="3_n1ud7"]
+[ext_resource type="Texture2D" uid="uid://b0dtmhseiexmd" path="res://scenes/UI/level_HUD/art/feather.png" id="6_lhu41"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8cks"]
+atlas = ExtResource("1_nv6xc")
+region = Rect2(246, 0, 82, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbi0t"]
+atlas = ExtResource("1_nv6xc")
+region = Rect2(164, 0, 82, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdesr"]
+atlas = ExtResource("1_nv6xc")
+region = Rect2(82, 0, 82, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1ud7"]
+atlas = ExtResource("1_nv6xc")
+region = Rect2(0, 0, 82, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhu41"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8cks")
+}],
+"loop": true,
+"name": &"0_health",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbi0t")
+}],
+"loop": true,
+"name": &"1_health",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdesr")
+}],
+"loop": true,
+"name": &"2_health",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1ud7")
+}],
+"loop": true,
+"name": &"3_health",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_lhu41"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LifeContainer/EggContainer/Egg1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LifeContainer/EggContainer/Egg1:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-127, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LifeContainer/EggContainer/Egg2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LifeContainer/EggContainer/Egg2:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-127, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LifeContainer/EggContainer/Egg3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LifeContainer/EggContainer/Egg3:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-126, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LifeContainer/EggContainer/Egg3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LifeContainer/EggContainer/Egg2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("LifeContainer/EggContainer/Egg1:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_n1ud7"]
+resource_name = "egg_1_collectede"
+length = 0.37
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LifeContainer/EggContainer/Egg1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LifeContainer/EggContainer/Egg1:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-192, -0.185, 0, 0.185, 0, -140, -0.185, 0, 0.185, 0),
+"times": PackedFloat32Array(0.00277556, 0.366667)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LifeContainer/EggContainer/Egg1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_gpvwg"]
+resource_name = "egg_2_collected"
+length = 0.37
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LifeContainer/EggContainer/Egg2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LifeContainer/EggContainer/Egg2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-182, -0.25, 0, 0.0333333, 0, -140, -0.185, 0, 0.185, 0),
+"times": PackedFloat32Array(0, 0.37)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LifeContainer/EggContainer/Egg2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vvh2d"]
+resource_name = "egg_3_collected"
+length = 0.37
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LifeContainer/EggContainer/Egg3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LifeContainer/EggContainer/Egg3:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-183, -0.185, 0, 0.185, 0, -143, -0.185, 0, 0.185, 0),
+"times": PackedFloat32Array(0, 0.366667)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LifeContainer/EggContainer/Egg3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lhu41"]
+_data = {
+&"RESET": SubResource("Animation_lhu41"),
+&"egg_1_collected": SubResource("Animation_n1ud7"),
+&"egg_2_collected": SubResource("Animation_gpvwg"),
+&"egg_3_collected": SubResource("Animation_vvh2d")
+}
+
+[sub_resource type="Animation" id="Animation_a4t70"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LifeContainer/Feather:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(104, -27)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LifeContainer/Feather:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tqv13"]
+resource_name = "feather_disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LifeContainer/Feather:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(104, -27), Vector2(119, -85)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LifeContainer/Feather:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4q3f"]
+_data = {
+&"RESET": SubResource("Animation_a4t70"),
+&"feather_disappear": SubResource("Animation_tqv13")
+}
+
+[node name="LevelHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_djojk")
+metadata/_edit_lock_ = true
+
+[node name="LifeContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 56.0
+grow_vertical = 0
+
+[node name="EggContainer" type="MarginContainer" parent="LifeContainer"]
+layout_mode = 2
+
+[node name="NestBack" type="Sprite2D" parent="LifeContainer/EggContainer"]
+position = Vector2(24, -149)
+texture = ExtResource("2_fbi0t")
+centered = false
+
+[node name="Egg1" type="Sprite2D" parent="LifeContainer/EggContainer"]
+visible = false
+position = Vector2(31, -127)
+texture = ExtResource("3_n1ud7")
+centered = false
+
+[node name="Egg2" type="Sprite2D" parent="LifeContainer/EggContainer"]
+visible = false
+position = Vector2(52, -127)
+texture = ExtResource("3_n1ud7")
+centered = false
+
+[node name="Egg3" type="Sprite2D" parent="LifeContainer/EggContainer"]
+visible = false
+position = Vector2(42, -126)
+texture = ExtResource("3_n1ud7")
+centered = false
+
+[node name="NestFront" type="Sprite2D" parent="LifeContainer/EggContainer"]
+position = Vector2(24, -149)
+texture = ExtResource("3_jdesr")
+centered = false
+
+[node name="Health" type="AnimatedSprite2D" parent="LifeContainer"]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(7, -112)
+sprite_frames = SubResource("SpriteFrames_lhu41")
+animation = &"3_health"
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Feather" type="Sprite2D" parent="LifeContainer"]
+position = Vector2(104, -27)
+texture = ExtResource("6_lhu41")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="TimeContainer" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 47.0
+offset_bottom = 40.0
+
+[node name="Time" type="Label" parent="TimeContainer"]
+visible = false
+layout_mode = 2
+text = "Time: "
+
+[node name="EggsAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lhu41")
+}
+
+[node name="FeatherAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h4q3f")
+}

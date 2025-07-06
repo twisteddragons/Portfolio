@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://cgu5vht8bilou"]
+
+[ext_resource type="Script" uid="uid://b8kjh8uok6stk" path="res://scenes/levels/level_data.gd" id="1_pwqwm"]
+
+[resource]
+script = ExtResource("1_pwqwm")
+gold_time = 60.0
+silver_time = 120.0
+bronze_time = 180.0
+level_uid = "uid://pk6fkc54dama"
+metadata/_custom_type_script = "uid://b8kjh8uok6stk"

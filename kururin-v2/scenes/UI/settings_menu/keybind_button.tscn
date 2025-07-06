@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://4rp1joannily"]
+
+[ext_resource type="Script" uid="uid://bb2yv42l3kgxs" path="res://scenes/UI/settings_menu/keybind_button.gd" id="1_joxxb"]
+
+[node name="KeybindButton" type="Button" groups=["KeybindingButton"]]
+size_flags_horizontal = 3
+text = "W"
+script = ExtResource("1_joxxb")
+metadata/Keybind = "up"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

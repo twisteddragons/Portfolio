@@ -1,0 +1,304 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtuj5xc17mkj7"]
+
+[ext_resource type="Theme" uid="uid://dfsl3yxr8bw0" path="res://common/themes/bubbly/bubbly.tres" id="1_w7ge1"]
+[ext_resource type="Script" uid="uid://1k7velbmukgk" path="res://scenes/UI/settings_menu/settings_menu.gd" id="2_ewfbv"]
+[ext_resource type="PackedScene" uid="uid://4rp1joannily" path="res://scenes/UI/settings_menu/keybind_button.tscn" id="3_35cj5"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_w7ge1")
+script = ExtResource("2_ewfbv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2
+current_tab = 0
+
+[node name="Audio" type="MarginContainer" parent="MarginContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Audio/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master Volume"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MasterVolumeSlider" type="HSlider" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+max_value = 1.0
+step = 0.01
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music Volume"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MusicVolumeSlider" type="HSlider" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX Volume"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SFXVolumeSlider" type="HSlider" parent="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Visuals" type="MarginContainer" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/TabContainer/Visuals"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Visuals/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TabContainer/Visuals/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Visuals/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resolution"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Visuals/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ResolutionDropdown" type="OptionButton" parent="MarginContainer/TabContainer/Visuals/ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "640x360"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/TabContainer/Visuals/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Visuals/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fullscreen"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Visuals/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="FullscreenCheckButton" type="CheckButton" parent="MarginContainer/TabContainer/Visuals/ScrollContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Keybindings" type="MarginContainer" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/TabContainer/Keybindings"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Up"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="UpButton" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_35cj5")]
+unique_name_in_owner = true
+layout_mode = 2
+action = "up"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Down"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="DownButton" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("3_35cj5")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "S"
+action = "down"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Left"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="LeftButton" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("3_35cj5")]
+layout_mode = 2
+text = "A"
+action = "left"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Right"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="RightButton" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("3_35cj5")]
+layout_mode = 2
+text = "D"
+action = "right"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Boost 1"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="RightButton" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer5" instance=ExtResource("3_35cj5")]
+layout_mode = 2
+text = "J"
+action = "accel_1"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Boost 2"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+
+[node name="RightButton" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer6" instance=ExtResource("3_35cj5")]
+layout_mode = 2
+text = "K"
+action = "accel_2"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rotation Boost"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+
+[node name="RightButton" parent="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer7" instance=ExtResource("3_35cj5")]
+layout_mode = 2
+text = "L"
+action = "rotation_accel"
+
+[node name="BackButton" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Back"
+
+[connection signal="value_changed" from="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer2/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/TabContainer/Audio/ScrollContainer/VBoxContainer/HBoxContainer3/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="item_selected" from="MarginContainer/TabContainer/Visuals/ScrollContainer/VBoxContainer/HBoxContainer/ResolutionDropdown" to="." method="_on_resolution_dropdown_item_selected"]
+[connection signal="toggled" from="MarginContainer/TabContainer/Visuals/ScrollContainer/VBoxContainer/HBoxContainer2/FullscreenCheckButton" to="." method="_on_fullscreen_check_button_toggled"]
+[connection signal="keybind_button_pressed" from="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer/UpButton" to="." method="_on_keybind_button_pressed"]
+[connection signal="keybind_button_pressed" from="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer2/DownButton" to="." method="_on_keybind_button_pressed"]
+[connection signal="keybind_button_pressed" from="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer3/LeftButton" to="." method="_on_keybind_button_pressed"]
+[connection signal="keybind_button_pressed" from="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer4/RightButton" to="." method="_on_keybind_button_pressed"]
+[connection signal="keybind_button_pressed" from="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer5/RightButton" to="." method="_on_keybind_button_pressed"]
+[connection signal="keybind_button_pressed" from="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer6/RightButton" to="." method="_on_keybind_button_pressed"]
+[connection signal="keybind_button_pressed" from="MarginContainer/TabContainer/Keybindings/ScrollContainer/VBoxContainer/HBoxContainer7/RightButton" to="." method="_on_keybind_button_pressed"]
+[connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

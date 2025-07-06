@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://vv5bixht286r"]
+
+[ext_resource type="Texture2D" uid="uid://bb6i6m754majl" path="res://entities/level_select_button/art/level select button.png" id="1_t4mhy"]
+[ext_resource type="Script" uid="uid://d32xnthecamtx" path="res://entities/level_select_button/level_select_button.gd" id="2_2go36"]
+[ext_resource type="Resource" uid="uid://cgu5vht8bilou" path="res://scenes/levels/level_template.tres" id="3_t4mhy"]
+[ext_resource type="Texture2D" uid="uid://crq0lb0up2gyw" path="res://entities/level_select_button/art/hole.png" id="4_v5s27"]
+[ext_resource type="Texture2D" uid="uid://cgkrj52uxyt8u" path="res://entities/level_select_button/art/overworld_feather.png" id="5_8yexr"]
+[ext_resource type="Texture2D" uid="uid://bw5iath6xh41j" path="res://entities/level_select_button/art/overworld_nest.png" id="6_ya5v8"]
+[ext_resource type="Texture2D" uid="uid://cbr0viglefjwh" path="res://entities/level_select_button/art/overworld_egg.png" id="7_pu402"]
+
+[node name="LevelSelectButton" type="TextureButton" groups=["LevelSelectButton"]]
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -10.0
+offset_right = 16.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 10)
+texture_normal = ExtResource("1_t4mhy")
+script = ExtResource("2_2go36")
+level_ref = ExtResource("3_t4mhy")
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+z_index = -1
+texture_repeat = 2
+position = Vector2(-55, 20)
+points = PackedVector2Array(57, -7, 49, -6, 42, 1, 32, 1, 23, 10)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_top = -28.0
+offset_right = 40.0
+offset_bottom = -5.0
+text = "0-0"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -10.0
+offset_top = -74.0
+offset_right = 58.0
+offset_bottom = -51.0
+text = "eggs:"
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -5.0
+offset_top = -51.0
+offset_right = 57.0
+offset_bottom = -28.0
+text = "P: "
+
+[node name="Hole" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(35, 9)
+texture = ExtResource("4_v5s27")
+centered = false
+
+[node name="OverworldFeather" type="Sprite2D" parent="Hole"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -12)
+texture = ExtResource("5_8yexr")
+centered = false
+
+[node name="OverworldNest" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-22, 6)
+texture = ExtResource("6_ya5v8")
+centered = false
+
+[node name="OverworldEgg1" type="Sprite2D" parent="OverworldNest"]
+unique_name_in_owner = true
+visible = false
+z_index = -2
+position = Vector2(1, -4)
+texture = ExtResource("7_pu402")
+centered = false
+
+[node name="OverworldEgg2" type="Sprite2D" parent="OverworldNest"]
+unique_name_in_owner = true
+visible = false
+z_index = -3
+position = Vector2(11, -4)
+texture = ExtResource("7_pu402")
+centered = false
+
+[node name="OverworldEgg3" type="Sprite2D" parent="OverworldNest"]
+unique_name_in_owner = true
+visible = false
+z_index = -1
+position = Vector2(6, -5)
+texture = ExtResource("7_pu402")
+centered = false
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

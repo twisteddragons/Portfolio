@@ -1,0 +1,7 @@
+[gd_resource type="FastNoiseLite" format=3 uid="uid://c8jt60udi2fmp"]
+
+[resource]
+noise_type = 0
+seed = 1780
+fractal_type = 0
+domain_warp_fractal_type = 0

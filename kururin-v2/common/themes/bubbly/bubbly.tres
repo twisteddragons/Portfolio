@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dfsl3yxr8bw0"]
+
+[ext_resource type="Texture2D" uid="uid://crwle7kb0itlj" path="res://entities/player/art/cockpits/base.png" id="1_p7d4o"]
+[ext_resource type="StyleBox" uid="uid://cyqru6pbs0qe2" path="res://common/themes/bubbly/style_boxes/slider/slider_grabber_area.tres" id="2_somq5"]
+[ext_resource type="StyleBox" uid="uid://p61x3h6wdod" path="res://common/themes/bubbly/style_boxes/slider/slider_grabber_area_highlight.tres" id="3_s25hc"]
+[ext_resource type="StyleBox" uid="uid://ss8f4ga6vpk5" path="res://common/themes/bubbly/style_boxes/slider/slider_slider.tres" id="4_ojksj"]
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_p7d4o")
+HSlider/icons/grabber_highlight = ExtResource("1_p7d4o")
+HSlider/styles/grabber_area = ExtResource("2_somq5")
+HSlider/styles/grabber_area_highlight = ExtResource("3_s25hc")
+HSlider/styles/slider = ExtResource("4_ojksj")
+MarginContainer/constants/margin_bottom = 5
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 5

@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ss8f4ga6vpk5"]
+
+[ext_resource type="Texture2D" uid="uid://mpetpnoxokrw" path="res://common/themes/bubbly/style_boxes/slider/art/SettingsStickGrey.png" id="1_wm536"]
+
+[resource]
+content_margin_top = 12.0
+texture = ExtResource("1_wm536")
+texture_margin_left = 12.0
+texture_margin_right = 12.0
+axis_stretch_horizontal = 1

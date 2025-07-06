@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwrgs8d4wyl2i"
+path="res://.godot/imported/SUCCESS PICKUP Collect Chime 01.ogg-b863ad2cbd1fc8af264f07f5b8143c21.oggvorbisstr"
+
+[deps]
+
+source_file="res://entities/level_entities/egg/sfx/SUCCESS PICKUP Collect Chime 01.ogg"
+dest_files=["res://.godot/imported/SUCCESS PICKUP Collect Chime 01.ogg-b863ad2cbd1fc8af264f07f5b8143c21.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

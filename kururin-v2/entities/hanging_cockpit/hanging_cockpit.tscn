@@ -1,0 +1,156 @@
+[gd_scene load_steps=10 format=3 uid="uid://ch2ksjn4dxat"]
+
+[ext_resource type="Script" uid="uid://gaaubp3646ab" path="res://entities/hanging_cockpit/hanging_cockpit.gd" id="1_ewl6g"]
+[ext_resource type="Texture2D" uid="uid://crwle7kb0itlj" path="res://entities/player/art/cockpits/base.png" id="1_xowy0"]
+[ext_resource type="Texture2D" uid="uid://benghunsvnysd" path="res://entities/player/art/wings/base/L.png" id="2_gyyn1"]
+[ext_resource type="BitMap" uid="uid://kmp5iqbo4pjq" path="res://entities/hanging_cockpit/art/cockpit_bitmap.png" id="3_gyyn1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m3nil"]
+radius = 2.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uoxkj"]
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ev1l8"]
+size = Vector2(4, 12)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ewl6g"]
+absorbent = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ev1l8"]
+radius = 12.0
+
+[node name="HangingCockpit" type="Control"]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ewl6g")
+
+[node name="anchor" type="StaticBody2D" parent="."]
+position = Vector2(0, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="anchor"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_m3nil")
+
+[node name="Sprite2D" type="Sprite2D" parent="anchor"]
+position = Vector2(0, -3)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_xowy0")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(0, 11)
+node_a = NodePath("../anchor")
+node_b = NodePath("../ChainBody")
+bias = 0.9
+angular_limit_enabled = true
+angular_limit_lower = -0.785398
+angular_limit_upper = 0.785398
+
+[node name="ChainBody" type="RigidBody2D" parent="."]
+position = Vector2(0, 16)
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_uoxkj")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Chain" type="Sprite2D" parent="ChainBody"]
+rotation = 1.5708
+scale = Vector2(0.0586469, 0.333333)
+texture = ExtResource("2_gyyn1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChainBody"]
+shape = SubResource("RectangleShape2D_ev1l8")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, 21)
+node_a = NodePath("../ChainBody")
+node_b = NodePath("../ChainBody2")
+bias = 0.9
+angular_limit_enabled = true
+angular_limit_lower = -0.523599
+angular_limit_upper = 0.523599
+
+[node name="ChainBody2" type="RigidBody2D" parent="."]
+position = Vector2(0, 26)
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_uoxkj")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Chain" type="Sprite2D" parent="ChainBody2"]
+rotation = 1.5708
+scale = Vector2(0.0586469, 0.333333)
+texture = ExtResource("2_gyyn1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChainBody2"]
+shape = SubResource("RectangleShape2D_ev1l8")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(0, 31)
+node_a = NodePath("../ChainBody2")
+node_b = NodePath("../ChainBody3")
+bias = 0.9
+angular_limit_enabled = true
+angular_limit_lower = -0.523599
+angular_limit_upper = 0.523599
+
+[node name="ChainBody3" type="RigidBody2D" parent="."]
+position = Vector2(0, 36)
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_uoxkj")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Chain" type="Sprite2D" parent="ChainBody3"]
+rotation = 1.5708
+scale = Vector2(0.0586469, 0.333333)
+texture = ExtResource("2_gyyn1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChainBody3"]
+shape = SubResource("RectangleShape2D_ev1l8")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(0, 41)
+node_a = NodePath("../ChainBody3")
+node_b = NodePath("../CockpitBody")
+bias = 0.9
+angular_limit_enabled = true
+angular_limit_lower = -1.74533
+angular_limit_upper = 1.74533
+motor_enabled = true
+motor_target_velocity = 0.269304
+
+[node name="CockpitBody" type="RigidBody2D" parent="."]
+position = Vector2(0, 52)
+mass = 7.287
+physics_material_override = SubResource("PhysicsMaterial_ewl6g")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CockpitBody"]
+shape = SubResource("CircleShape2D_ev1l8")
+metadata/_edit_lock_ = true
+
+[node name="TextureButton" type="TextureButton" parent="CockpitBody"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_xowy0")
+texture_click_mask = ExtResource("3_gyyn1")
+
+[connection signal="mouse_entered" from="CockpitBody/TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="CockpitBody/TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="CockpitBody/TextureButton" to="." method="_on_texture_button_pressed"]

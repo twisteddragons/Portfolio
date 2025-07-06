@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bm135mnnydnys"]
+
+[ext_resource type="Shader" uid="uid://3jafocd8h0qs" path="res://common/shaders/palette_swap.gdshader" id="1_bllux"]
+
+[resource]
+shader = ExtResource("1_bllux")
+shader_parameter/base_colours = PackedColorArray(0.196078, 0.2, 0.32549, 1, 0.282353, 0.290196, 0.466667, 1, 0.301961, 0.396078, 0.705882, 1, 0.301961, 0.607843, 0.901961, 1, 0.560784, 0.827451, 1, 1)
+shader_parameter/highlight_colours = PackedColorArray(0.682353, 0.137255, 0.203922, 1, 0.909804, 0.231373, 0.231373, 1, 0.984314, 0.419608, 0.113725, 1, 0.968627, 0.588235, 0.0901961, 1, 0.976471, 0.760784, 0.168627, 1, 1, 1, 1, 1)

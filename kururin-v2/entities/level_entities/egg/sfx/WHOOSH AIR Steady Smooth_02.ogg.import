@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bmbassfmp861b"
+path="res://.godot/imported/WHOOSH AIR Steady Smooth_02.ogg-a7ad1c1e14596ed1fa27f60b8a2bbbc2.oggvorbisstr"
+
+[deps]
+
+source_file="res://entities/level_entities/egg/sfx/WHOOSH AIR Steady Smooth_02.ogg"
+dest_files=["res://.godot/imported/WHOOSH AIR Steady Smooth_02.ogg-a7ad1c1e14596ed1fa27f60b8a2bbbc2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

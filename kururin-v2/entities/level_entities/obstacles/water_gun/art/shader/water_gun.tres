@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dh50ypgn26p6a"]
+
+[ext_resource type="Shader" uid="uid://b07scrg0c6ike" path="res://entities/level_entities/obstacles/water_gun/art/shader/water_gun.gdshader" id="1_47xg8"]
+[ext_resource type="Texture2D" uid="uid://bb1h1bua775ji" path="res://entities/level_entities/obstacles/water_gun/art/new_noise_texture_2d.tres" id="2_q5pcc"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_47xg8")
+shader_parameter/noise_texture = ExtResource("2_q5pcc")
+shader_parameter/speed = 0.2
+shader_parameter/edge_margin = 0.1
+shader_parameter/foam_margin = 0.065
+shader_parameter/hor_stretch = 1.0
+shader_parameter/vert_stretch = 15.44
+shader_parameter/side_offset = 0.23
+shader_parameter/amplitude = 0.045
+shader_parameter/wavelength = 10.11
+shader_parameter/side_speed = 2.0

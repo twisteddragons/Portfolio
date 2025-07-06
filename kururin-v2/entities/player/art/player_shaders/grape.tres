@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://du4t8a56d1o3r"]
+
+[ext_resource type="Shader" uid="uid://3jafocd8h0qs" path="res://common/shaders/palette_swap.gdshader" id="1_5aj8i"]
+
+[resource]
+shader = ExtResource("1_5aj8i")
+shader_parameter/base_colours = PackedColorArray(0.0823529, 0.0196078, 0.14902, 1, 0.11132, 0.00683594, 0.25, 1, 0.290196, 0, 0.439216, 1, 0.564371, 0.0333252, 0.609375, 1, 0.816406, 0.0605927, 0.733739, 1)
+shader_parameter/highlight_colours = PackedColorArray(0.0220649, 0.0194397, 0.355469, 1, 0.0238037, 0.343609, 0.46875, 1, 0.0922852, 0.537289, 0.65625, 1, 0.0783234, 0.691406, 0.289071, 1, 0.152297, 0.886719, 0.0900574, 1, 1, 0, 0, 1)

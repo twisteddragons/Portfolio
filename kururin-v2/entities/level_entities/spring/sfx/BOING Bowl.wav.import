@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwomtdwhfyg8i"
+path="res://.godot/imported/BOING Bowl.wav-c49605f4e4890fffab2b24ed30c64fed.sample"
+
+[deps]
+
+source_file="res://entities/level_entities/spring/sfx/BOING Bowl.wav"
+dest_files=["res://.godot/imported/BOING Bowl.wav-c49605f4e4890fffab2b24ed30c64fed.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

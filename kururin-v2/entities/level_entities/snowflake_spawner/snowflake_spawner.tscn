@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://spjh3mb7t2ua"]
+
+[ext_resource type="Script" uid="uid://bcroysrsk0uxc" path="res://entities/level_entities/snowflake_spawner/snowflake_spawner.gd" id="1_ytsmd"]
+[ext_resource type="PackedScene" uid="uid://dmwp6jnm8uasy" path="res://entities/level_entities/snowflake/snowflake.tscn" id="2_qep08"]
+[ext_resource type="Texture2D" uid="uid://b0t3clbdsgqcp" path="res://icon.svg" id="3_c2mbg"]
+
+[node name="SnowflakeSpawner" type="Node2D"]
+script = ExtResource("1_ytsmd")
+snowflake_scene = ExtResource("2_qep08")
+
+[node name="Snowflake" parent="." instance=ExtResource("2_qep08")]
+unique_name_in_owner = true
+
+[node name="RespawnTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.643229, 0.964844, 1)
+z_index = -1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_c2mbg")
+
+[connection signal="snowflake_collected" from="Snowflake" to="." method="_on_snowflake_snowflake_collected"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

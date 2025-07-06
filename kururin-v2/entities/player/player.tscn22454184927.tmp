@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0itab5su3ccu"]
+
+[ext_resource type="Script" uid="uid://beare78gtjmi8" path="res://entities/player/player.gd" id="1_gwnis"]
+[ext_resource type="Texture2D" uid="uid://benghunsvnysd" path="res://entities/player/art/wings/base/L.png" id="2_btcbx"]
+[ext_resource type="Material" uid="uid://bm135mnnydnys" path="res://entities/player/art/player_shaders/base.tres" id="2_tekja"]
+[ext_resource type="Texture2D" uid="uid://crwle7kb0itlj" path="res://entities/player/art/cockpits/base.png" id="3_gwnis"]
+[ext_resource type="Texture2D" uid="uid://cemj0gkas7olp" path="res://entities/snowflake/art/snowflake.png" id="5_fkugw"]
+[ext_resource type="Script" uid="uid://bq60br8um7ppe" path="res://entities/wiggly_line/wiggly_line.gd" id="6_8fjmc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gwnis"]
+radius = 12.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8fjmc"]
+noise_type = 3
+frequency = 0.005
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+process_mode = 1
+motion_mode = 1
+safe_margin = 0.001
+script = ExtResource("1_gwnis")
+input_disabled = null
+clockwise = null
+base_speed_amt = null
+base_rot_speed_amt = null
+speed_boost_amt = 110.0
+rot_speed_boost_amt = 0.8
+knockback_speed_amt = 250.0
+rot_knockback_amt = null
+knockback_duration = null
+iframes_duration = null
+current_plane_type = null
+current_wing_skin_library = null
+current_cockpit_skin = null
+
+[node name="WingsSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = ExtResource("2_tekja")
+texture = ExtResource("2_btcbx")
+
+[node name="WingsHitbox" type="CollisionPolygon2D" parent="."]
+unique_name_in_owner = true
+visible = false
+polygon = PackedVector2Array(-74, -4, -74, -3, -75, -3, -75, 3, -74, 3, -74, 4, 74, 4, 74, 3, 75, 3, 75, -3, 74, -3, 74, -4)
+
+[node name="Cockpit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cockpit"]
+visible = false
+shape = SubResource("CircleShape2D_gwnis")
+
+[node name="CockpitSprite" type="Sprite2D" parent="Cockpit"]
+unique_name_in_owner = true
+material = ExtResource("2_tekja")
+texture = ExtResource("3_gwnis")
+
+[node name="SnowflakeProgressBar" type="TextureProgressBar" parent="Cockpit"]
+unique_name_in_owner = true
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+value = 100.0
+fill_mode = 4
+texture_progress = ExtResource("5_fkugw")
+tint_progress = Color(0.580392, 0.533333, 0.631373, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="HitSFX" type="AudioStreamPlayer" parent="."]
+max_polyphony = 3
+bus = &"SFX"
+
+[node name="FrozenTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="ForceField" type="Line2D" parent="."]
+unique_name_in_owner = true
+points = PackedVector2Array(-74, 11, -63, 13, -51, 13, -35, 11, -20, 12, -11, 12, -5, 14, -1, 16, 6, 15, 9, 12, 14, 9, 19, 10, 27, 10, 36, 12, 44, 11, 52, 11, 61, 12, 70, 11, 77, 11, 82, 6, 83, -1, 81, -6, 78, -10, 69, -10, 56, -11, 49, -9, 43, -10, 31, -10, 22, -11, 14, -8, 9, -14, -1, -15, -8, -15, -11, -13, -15, -8, -22, -9, -34, -12, -42, -11, -54, -12, -60, -12, -67, -11, -73, -10, -77, -10, -80, -5, -81, 3, -79, 8)
+closed = true
+width = 2.0
+default_color = Color(0.078125, 1, 0, 1)
+joint_mode = 1
+script = ExtResource("6_8fjmc")
+noise = SubResource("FastNoiseLite_8fjmc")
+amplitude = 15.0
+metadata/_custom_type_script = "uid://bq60br8um7ppe"
+
+[connection signal="timeout" from="FrozenTimer" to="." method="_on_frozen_timer_timeout"]

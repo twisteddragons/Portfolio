@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://vv5bixht286r"]
+
+[ext_resource type="Texture2D" uid="uid://bb6i6m754majl" path="res://Common/UI/LevelSelectButton/Art/level select button.png" id="1_t4mhy"]
+[ext_resource type="Script" uid="uid://d32xnthecamtx" path="res://Common/UI/LevelSelectButton/level_select_button.gd" id="2_2go36"]
+[ext_resource type="Resource" uid="uid://cgu5vht8bilou" path="res://Stages/Levels/level_template.tres" id="3_t4mhy"]
+
+[node name="LevelSelectButton" type="TextureButton"]
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -10.0
+offset_right = 16.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 10)
+texture_normal = ExtResource("1_t4mhy")
+script = ExtResource("2_2go36")
+level_ref = ExtResource("3_t4mhy")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = -28.0
+offset_right = 40.0
+offset_bottom = -5.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

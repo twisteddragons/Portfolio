@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MusicPackage" load_steps=3 format=3 uid="uid://d2qmw414unx1q"]
+
+[ext_resource type="Script" uid="uid://bm58yorwgs8e0" path="res://singletons/music_handler/music_package.gd" id="1_fq4ki"]
+[ext_resource type="AudioStream" uid="uid://0y33yn17a26s" path="res://music/beach_party/Cute Loops - Beach Party.ogg" id="2_ir2td"]
+
+[resource]
+script = ExtResource("1_fq4ki")
+stream = ExtResource("2_ir2td")
+volume_db = 0.0
+pitch = 0.8
+start_position = 10.5
+metadata/_custom_type_script = "uid://bm58yorwgs8e0"

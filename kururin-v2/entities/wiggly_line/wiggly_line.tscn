@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc6ae64nbik61"]
+
+[ext_resource type="Script" uid="uid://bq60br8um7ppe" path="res://entities/wiggly_line/wiggly_line.gd" id="1_ohnry"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ohnry"]
+frequency = 0.005
+
+[node name="WigglyLine" type="Line2D"]
+points = PackedVector2Array(233, 187, 259, 187, 281.489, 186.826, 309.68, 186.607, 329.153, 186.456, 348.114, 186.309, 366.815, 186.164, 388, 186)
+closed = true
+width = 2.0
+script = ExtResource("1_ohnry")
+noise = SubResource("FastNoiseLite_ohnry")
+amplitude = 5.0

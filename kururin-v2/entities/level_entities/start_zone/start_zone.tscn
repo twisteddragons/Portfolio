@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0g18pwh5cmwc"]
+
+[ext_resource type="Texture2D" uid="uid://bvn57v0e2hr5x" path="res://entities/level_entities/safe_zone/art/safe zone.png" id="2_1x40q"]
+[ext_resource type="Script" uid="uid://b607a4e7nr102" path="res://entities/level_entities/start_zone/start_zone.gd" id="2_cyrv3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tqmy"]
+size = Vector2(292, 292)
+
+[node name="StartZone" type="Area2D" groups=["safe_zone"]]
+process_mode = 1
+scale = Vector2(0.778, 0.778)
+script = ExtResource("2_cyrv3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8tqmy")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+texture = ExtResource("2_1x40q")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MusicPackage" load_steps=3 format=3 uid="uid://igntppcdmhg0"]
+
+[ext_resource type="Script" uid="uid://bm58yorwgs8e0" path="res://singletons/music_handler/music_package.gd" id="1_fd73g"]
+[ext_resource type="AudioStream" uid="uid://cjujh2oxrrowp" path="res://music/candy_coated_dreams/Cute Loops - Candy-Coated Dreams.ogg" id="2_5dmoo"]
+
+[resource]
+script = ExtResource("1_fd73g")
+stream = ExtResource("2_5dmoo")
+volume_db = 0.0
+pitch = 1.0
+start_position = 0.0
+metadata/_custom_type_script = "uid://bm58yorwgs8e0"

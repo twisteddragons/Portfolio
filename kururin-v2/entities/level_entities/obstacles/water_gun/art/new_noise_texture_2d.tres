@@ -1,0 +1,9 @@
+[gd_resource type="NoiseTexture2D" load_steps=3 format=3 uid="uid://bb1h1bua775ji"]
+
+[ext_resource type="Gradient" uid="uid://c5vgvrkut6clk" path="res://entities/level_entities/obstacles/water_gun/art/water_gradient.tres" id="1_1xc0l"]
+[ext_resource type="FastNoiseLite" uid="uid://c8jt60udi2fmp" path="res://entities/level_entities/obstacles/water_gun/new_fast_noise_lite.tres" id="2_11dxk"]
+
+[resource]
+seamless = true
+color_ramp = ExtResource("1_1xc0l")
+noise = ExtResource("2_11dxk")

@@ -1,0 +1,7 @@
+[gd_resource type="GradientTexture1D" load_steps=2 format=3 uid="uid://cj6v4wc0te8we"]
+
+[ext_resource type="Gradient" uid="uid://c5vgvrkut6clk" path="res://entities/level_entities/obstacles/water_gun/art/water_gradient.tres" id="1_cvg51"]
+
+[resource]
+gradient = ExtResource("1_cvg51")
+width = 1000

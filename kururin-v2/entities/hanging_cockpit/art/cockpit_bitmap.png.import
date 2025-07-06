@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://kmp5iqbo4pjq"
+path="res://.godot/imported/cockpit_bitmap.png-30795093341876a58fc9ffe89a478a42.res"
+
+[deps]
+
+source_file="res://entities/hanging_cockpit/art/cockpit_bitmap.png"
+dest_files=["res://.godot/imported/cockpit_bitmap.png-30795093341876a58fc9ffe89a478a42.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

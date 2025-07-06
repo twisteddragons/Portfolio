@@ -1,0 +1,139 @@
+[gd_scene load_steps=18 format=3 uid="uid://b0itab5su3ccu"]
+
+[ext_resource type="Script" uid="uid://beare78gtjmi8" path="res://entities/player/player.gd" id="1_gwnis"]
+[ext_resource type="Texture2D" uid="uid://benghunsvnysd" path="res://entities/player/art/wings/base/L.png" id="2_btcbx"]
+[ext_resource type="Material" uid="uid://bm135mnnydnys" path="res://entities/player/art/player_shaders/base.tres" id="2_tekja"]
+[ext_resource type="Texture2D" uid="uid://crwle7kb0itlj" path="res://entities/player/art/cockpits/base.png" id="3_gwnis"]
+[ext_resource type="Texture2D" uid="uid://cemj0gkas7olp" path="res://entities/level_entities/snowflake/art/snowflake.png" id="5_fkugw"]
+[ext_resource type="Script" uid="uid://bq60br8um7ppe" path="res://entities/wiggly_line/wiggly_line.gd" id="6_8fjmc"]
+[ext_resource type="AudioStream" uid="uid://qv2u8o8aam4v" path="res://entities/player/SFX/shield.wav" id="7_qiwj3"]
+[ext_resource type="AudioStream" uid="uid://ceqikq32ldtik" path="res://entities/player/SFX/damage1.wav" id="8_wvtmh"]
+[ext_resource type="AudioStream" uid="uid://da4gdm3n14ea4" path="res://entities/player/SFX/damage2.wav" id="9_7thud"]
+[ext_resource type="AudioStream" uid="uid://bc412m4jbyjxh" path="res://entities/player/SFX/damage3.wav" id="10_a1qjk"]
+[ext_resource type="Texture2D" uid="uid://cgptuwelfss03" path="res://entities/player/art/hit_particle.png" id="11_7thud"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gwnis"]
+radius = 12.0
+
+[sub_resource type="Curve" id="Curve_wvtmh"]
+_data = [Vector2(0.0254237, 0.685393), 0.0, 0.0, 0, 0, Vector2(0.0635593, 0.213483), 0.0, 0.0, 0, 0, Vector2(0.101695, 0.730337), 0.0, 0.0, 0, 0, Vector2(0.194915, 0.202247), 0.0, 0.0, 0, 0, Vector2(0.254237, 0.741573), 0.0, 0.0, 0, 0, Vector2(0.326271, 0.202247), 0.0, 0.0, 0, 0, Vector2(0.402542, 0.741573), 0.0, 0.0, 0, 0, Vector2(0.45339, 0.219554), 0.0, 0.0, 0, 0, Vector2(0.550847, 0.696629), 0.0, 0.0, 0, 0, Vector2(0.644068, 0.280899), 0.0, 0.0, 0, 0, Vector2(0.733051, 0.707865), 0.0, 0.0, 0, 0, Vector2(0.779661, 0.224719), 0.0, 0.0, 0, 0, Vector2(0.817797, 0.640449), 0.0, 0.0, 0, 0, Vector2(0.855932, 0.179775), 0.0, 0.0, 0, 0, Vector2(0.915254, 0.719101), 0.0, 0.0, 0, 0, Vector2(0.995763, 0.247191), 0.0, 0.0, 0, 0]
+point_count = 16
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8fjmc"]
+noise_type = 3
+frequency = 0.005
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wvtmh"]
+random_pitch = 1.96
+streams_count = 1
+stream_0/stream = ExtResource("7_qiwj3")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qiwj3"]
+random_pitch = 1.6
+random_volume_offset_db = 1.92
+streams_count = 3
+stream_0/stream = ExtResource("8_wvtmh")
+stream_1/stream = ExtResource("9_7thud")
+stream_2/stream = ExtResource("10_a1qjk")
+
+[sub_resource type="Curve" id="Curve_7thud"]
+_data = [Vector2(0, 0.720827), 0.0, 0.0, 0, 0, Vector2(0.301075, 1), 0.0, 0.0, 0, 0, Vector2(0.68172, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+process_mode = 1
+collision_layer = 129
+motion_mode = 1
+safe_margin = 0.001
+script = ExtResource("1_gwnis")
+speed_boost_amt = 110.0
+rot_speed_boost_amt = 0.8
+knockback_speed_amt = 250.0
+
+[node name="WingsSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = ExtResource("2_tekja")
+texture = ExtResource("2_btcbx")
+
+[node name="WingsHitbox" type="CollisionPolygon2D" parent="."]
+unique_name_in_owner = true
+visible = false
+polygon = PackedVector2Array(-74, -4, -74, -3, -75, -3, -75, 3, -74, 3, -74, 4, 74, 4, 74, 3, 75, 3, 75, -3, 74, -3, 74, -4)
+
+[node name="Cockpit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cockpit"]
+visible = false
+shape = SubResource("CircleShape2D_gwnis")
+
+[node name="CockpitSprite" type="Sprite2D" parent="Cockpit"]
+unique_name_in_owner = true
+material = ExtResource("2_tekja")
+texture = ExtResource("3_gwnis")
+
+[node name="SnowflakeProgressBar" type="TextureProgressBar" parent="Cockpit"]
+unique_name_in_owner = true
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+value = 100.0
+fill_mode = 4
+texture_progress = ExtResource("5_fkugw")
+tint_progress = Color(0.580392, 0.533333, 0.631373, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="HitSFX" type="AudioStreamPlayer" parent="."]
+max_polyphony = 3
+bus = &"SFX"
+
+[node name="FrozenTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="ForceField" type="Line2D" parent="."]
+unique_name_in_owner = true
+closed = true
+width = 2.5
+width_curve = SubResource("Curve_wvtmh")
+default_color = Color(0.078125, 1, 0, 1)
+joint_mode = 1
+script = ExtResource("6_8fjmc")
+noise = SubResource("FastNoiseLite_8fjmc")
+amplitude = 15.0
+metadata/_custom_type_script = "uid://bq60br8um7ppe"
+
+[node name="ShieldAudio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_wvtmh")
+volume_db = 3.33
+pitch_scale = 1.19
+
+[node name="DamageAudio" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_qiwj3")
+pitch_scale = 1.73
+max_polyphony = 4
+
+[node name="HitParticles" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+texture = ExtResource("11_7thud")
+lifetime = 0.6
+one_shot = true
+preprocess = 0.06
+explosiveness = 1.0
+lifetime_randomness = 0.41
+draw_order = 1
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 43.84
+initial_velocity_max = 77.05
+angular_velocity_min = -237.36
+angular_velocity_max = 224.58
+tangential_accel_min = -59.8
+tangential_accel_max = 56.65
+damping_min = 31.782
+damping_max = 65.527
+scale_amount_min = 0.55
+scale_amount_curve = SubResource("Curve_7thud")
+
+[connection signal="timeout" from="FrozenTimer" to="." method="_on_frozen_timer_timeout"]
