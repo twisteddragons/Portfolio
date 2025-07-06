@@ -5,9 +5,9 @@ Playable online at https://twisteddragons.itch.io/caro-dei
 
 During humanity's final moments, a mysterious object falls from the sky, containing within it the key to survival, or the final nail in the coffin.
 
-Play as a reporter investigating the nature of this object, tell what remains of the world what they must do.
+Play as a reporter investigating the nature of this object, tell what remains of the world what they must do to survive.
 
-Made from scratch in about 4 weeks for a Uni class about horror games. Will likely not update unless bugs are found. If you are someone whom I don't personally know who's somehow found their way here and decided to try it out, thanks!
+Made from scratch in about 4 weeks for a class about horror games.
 
 The code, art, story, and setting were created by Walker Jones. SFX were taken from a license-free SFX library. Some Godot tools were used as well.
 
