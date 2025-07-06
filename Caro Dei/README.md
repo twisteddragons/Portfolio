@@ -11,6 +11,8 @@ Made from scratch in about 4 weeks for a class about horror games.
 
 The code, art, story, and setting were created by Walker Jones. SFX were taken from a license-free SFX library. Some Godot tools were used as well.
 
+All art was created in Aseprite.
+
 # Tools used
 
 ## "Dialogic" by coppolaemilio; MIT; 2024-02-06
@@ -21,4 +23,8 @@ Used to handle dialog with other characters. I implemented a custom setup as all
 
 ![Screenshot02](https://github.com/user-attachments/assets/c7d7005e-7c12-43c1-bb01-4fcdec9c8466)
 
+Dialog with an NPC. Made with the Dialogic tool.
+
 ![Screenshot01](https://github.com/user-attachments/assets/16a807ea-ffc6-461e-b33e-ea49a7570f3f)
+
+The Caro Dei, which fell from the sky.
