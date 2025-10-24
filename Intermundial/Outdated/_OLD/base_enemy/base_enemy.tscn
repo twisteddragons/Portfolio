@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpjsuoygwd3i4"]
+
+[ext_resource type="Script" uid="uid://diwqpiedgx143" path="res://Outdated/_OLD/base_enemy/base_enemy.gd" id="1_6gtyw"]
+[ext_resource type="Script" uid="uid://bdkem4b0nsk77" path="res://entities/enemies/StateMachine/state_machine.gd" id="1_aiyc5"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="2_yk2kt"]
+[ext_resource type="Texture2D" uid="uid://ut3mfri5c7dj" path="res://Outdated/_OLD/art/Arthur_Morgan_-_Red_Dead_Redemption_2.png" id="3_yk2kt"]
+[ext_resource type="PackedScene" uid="uid://vxjwq5d77csd" path="res://components/state_chart_animation_player/state_chart_animation_player.tscn" id="5_uu5dw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6gtyw"]
+
+[node name="BaseEnemy" type="CharacterBody3D" groups=["Damageable", "Effectable", "Enemy"]]
+process_mode = 1
+script = ExtResource("1_6gtyw")
+
+[node name="StateMachine" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_aiyc5")
+metadata/_custom_type_script = "uid://bdkem4b0nsk77"
+
+[node name="StateChart" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
+script = ExtResource("2_yk2kt")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_6gtyw")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.736173, 0, 0, 0, 0.429769, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("3_yk2kt")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+unique_name_in_owner = true
+
+[node name="AnimationPlayer" parent="." node_paths=PackedStringArray("state_chart") instance=ExtResource("5_uu5dw")]
+state_chart = NodePath("../StateMachine/StateChart")

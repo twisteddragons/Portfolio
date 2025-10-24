@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dhbhotgeo5v5b"]
+
+[ext_resource type="Texture2D" uid="uid://bkd07igni51rh" path="res://singletons/RoomGenerator/rooms/textures/raw_imgs/roof.png" id="1_mak5u"]
+
+[resource]
+albedo_texture = ExtResource("1_mak5u")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0

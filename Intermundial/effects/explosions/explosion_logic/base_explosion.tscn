@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bafax6ie4mfgb"]
+
+[ext_resource type="Script" uid="uid://to82cryekc0y" path="res://effects/explosions/explosion_logic/base_explosion.gd" id="1_j5udg"]
+[ext_resource type="PackedScene" uid="uid://brism5yvfabyy" path="res://effects/explosions/explosion_effect/ExplosionEffect.tscn" id="2_c2k16"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1ahro"]
+radius = 1.18829
+
+[node name="explosion" type="Node3D"]
+script = ExtResource("1_j5udg")
+explosion_scene = ExtResource("2_c2k16")
+vertical_knockback = 5.0
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_1ahro")
+
+[node name="delay" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="delay" to="." method="_on_delay_timeout"]

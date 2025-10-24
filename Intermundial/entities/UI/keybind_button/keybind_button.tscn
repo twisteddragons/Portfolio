@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyrbevc7kg4b7"]
+
+[ext_resource type="Script" uid="uid://caxl8grgn2o0f" path="res://entities/UI/keybind_button/keybind_button.gd" id="1_8w4et"]
+
+[node name="KeybindButton" type="Button" groups=["KeybindingButton"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+script = ExtResource("1_8w4et")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

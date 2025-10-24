@@ -1,0 +1,544 @@
+[gd_scene load_steps=62 format=3 uid="uid://upcuiiq80d5n"]
+
+[ext_resource type="Script" uid="uid://c1k3w3rxdby3i" path="res://entities/player/player.gd" id="1_rkbax"]
+[ext_resource type="Shader" path="res://trippy.gdshader" id="2_g1dw6"]
+[ext_resource type="Script" uid="uid://d1gt03uy8bfy4" path="res://entities/player/Hud_manager.gd" id="2_kbbq5"]
+[ext_resource type="Texture2D" uid="uid://b08d2ubehuxvd" path="res://entities/player/hud/hat/hat.png" id="3_wodsf"]
+[ext_resource type="Texture2D" uid="uid://c5twimeoommuk" path="res://entities/player/hud/revolver/shootAnimation/frame0000.png" id="4_wodsf"]
+[ext_resource type="Texture2D" uid="uid://dcfenyu702vi7" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0000.png" id="5_7otdo"]
+[ext_resource type="Texture2D" uid="uid://ing4pa06pqa1" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0001.png" id="6_c112w"]
+[ext_resource type="PackedScene" uid="uid://jw41ei7cvyr" path="res://ItemHat.tscn" id="6_sk710"]
+[ext_resource type="Texture2D" uid="uid://c38mfiavmvqhd" path="res://entities/player/hud/revolver/shootAnimation/frame0003.png" id="7_e7oew"]
+[ext_resource type="Texture2D" uid="uid://matf46wbpnyn" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0002.png" id="7_u37te"]
+[ext_resource type="Texture2D" uid="uid://basswbdd1x8d" path="res://entities/player/hud/revolver/shootAnimation/frame0004.png" id="8_c35mf"]
+[ext_resource type="Texture2D" uid="uid://mbr124g13i71" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0003.png" id="8_ssgi7"]
+[ext_resource type="Texture2D" uid="uid://b15irsnhwcd3b" path="res://entities/player/hud/revolver/shootAnimation/frame0005.png" id="9_65viv"]
+[ext_resource type="Texture2D" uid="uid://luy7isvbjki5" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0004.png" id="9_rtlkk"]
+[ext_resource type="Texture2D" uid="uid://bdtyt5drochdq" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0005.png" id="10_a2brg"]
+[ext_resource type="Texture2D" uid="uid://cqvmc8f5sg4i4" path="res://entities/player/hud/revolver/shootAnimation/frame0006.png" id="10_x7c3f"]
+[ext_resource type="Texture2D" uid="uid://b0t85j41w8cve" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0006.png" id="11_arp52"]
+[ext_resource type="Texture2D" uid="uid://dvssbcgq1l558" path="res://entities/player/hud/revolver/shootAnimation/frame0007.png" id="11_bjvpn"]
+[ext_resource type="Texture2D" uid="uid://dq37efsm7g35b" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0007.png" id="12_jjk8f"]
+[ext_resource type="Texture2D" uid="uid://dg2tllug1f3q3" path="res://entities/player/hud/revolver/shootAnimation/frame0008.png" id="12_s7qer"]
+[ext_resource type="Texture2D" uid="uid://nawmwdva06go" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0008.png" id="13_cnswy"]
+[ext_resource type="Texture2D" uid="uid://clol52xacgn34" path="res://entities/player/hud/revolver/shootAnimation/frame0009.png" id="13_g4c7l"]
+[ext_resource type="Texture2D" uid="uid://cqlhjfkpufs21" path="res://entities/player/hud/revolver/shootAnimation/frame0010.png" id="14_knn7v"]
+[ext_resource type="Texture2D" uid="uid://d0826u68j14ew" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0009.png" id="14_q5bfg"]
+[ext_resource type="Texture2D" uid="uid://c6ot86isgsoaa" path="res://entities/player/hud/revolver/shootAnimation/frame0011.png" id="15_7pqkx"]
+[ext_resource type="Texture2D" uid="uid://cxqm11xe6ry3h" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0010.png" id="15_p22ii"]
+[ext_resource type="Texture2D" uid="uid://cve4vtru2d73v" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0011.png" id="16_7rgwd"]
+[ext_resource type="Script" uid="uid://c4a7d25ro478a" path="res://entities/player/weapons/weapon_manager.gd" id="16_32hag"]
+[ext_resource type="Texture2D" uid="uid://bjuvddod1egxw" path="res://entities/player/hud/cyl/rev cyl.png" id="16_c35mf"]
+[ext_resource type="Texture2D" uid="uid://5ggrrs4o6l14" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0012.png" id="17_24so6"]
+[ext_resource type="Texture2D" uid="uid://cb2rfw1msnlo8" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0013.png" id="18_sk710"]
+[ext_resource type="Texture2D" uid="uid://sa0dt8bxorjt" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0014.png" id="19_kbbq5"]
+[ext_resource type="PackedScene" uid="uid://c4s8v46h4q7xw" path="res://kick_node.tscn" id="19_t1t22"]
+[ext_resource type="Texture2D" uid="uid://bvbulmpawhqq5" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0015.png" id="20_akixf"]
+[ext_resource type="Texture2D" uid="uid://ckl5vgdg3iji7" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0016.png" id="21_3y563"]
+[ext_resource type="Texture2D" uid="uid://dxvurrsefxwrx" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0017.png" id="22_sgfia"]
+[ext_resource type="Texture2D" uid="uid://bqno6c6djx3a4" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0018.png" id="23_sv458"]
+[ext_resource type="Texture2D" uid="uid://c66tnfmmxsukc" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0019.png" id="24_pth52"]
+[ext_resource type="Texture2D" uid="uid://d0r0myioo61t2" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0021.png" id="25_4iu2e"]
+[ext_resource type="Texture2D" uid="uid://dy5va6qjr87gs" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0022.png" id="26_0q7bw"]
+[ext_resource type="Texture2D" uid="uid://8swsjyw28qhn" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0023.png" id="27_qb5t2"]
+[ext_resource type="Texture2D" uid="uid://v581kgdtfvu8" path="res://entities/player/hud/revolver/reloadAnimation/reload_frame0024.png" id="28_qsjf6"]
+[ext_resource type="PackedScene" uid="uid://k3g33il67610" path="res://entities/player/shatter_controller.tscn" id="39_u37te"]
+[ext_resource type="Texture2D" uid="uid://bnarsbq44jje" path="res://entities/player/hud/CenterUI/ui_center.png" id="43_p22ii"]
+[ext_resource type="Texture2D" uid="uid://bj73a825qsrh4" path="res://entities/player/hud/WhiskeyBottle/bottle1.png" id="43_sk710"]
+[ext_resource type="Texture2D" uid="uid://dtv6u8hmhymg1" path="res://entities/player/hud/WhiskeyBottle/bottle3.png" id="44_kbbq5"]
+[ext_resource type="Texture2D" uid="uid://bwx80xdiy8mu8" path="res://entities/player/hud/CenterUI/yeehaw_gauge2.png" id="45_7rgwd"]
+[ext_resource type="Texture2D" uid="uid://nranokgxwbxj" path="res://entities/player/hud/WhiskeyBottle/bottle2.png" id="45_akixf"]
+[ext_resource type="Texture2D" uid="uid://n546krrcqb54" path="res://entities/player/hud/CenterUI/yeehaw_gauge3.png" id="46_24so6"]
+[ext_resource type="PackedScene" uid="uid://brwn7c4fl5tou" path="res://entities/items/passive_items/moon_boots/moon_boots.tscn" id="47_7otdo"]
+[ext_resource type="Texture2D" uid="uid://bugrjuv0t7vqm" path="res://entities/player/hud/CenterUI/yeehaw_gauge.png" id="47_sk710"]
+[ext_resource type="Texture2D" uid="uid://cdolkumkrpx3a" path="res://scenes/UpgradeScreen/SpgradeScreenSprites/pouch.png" id="48_kbbq5"]
+[ext_resource type="Script" uid="uid://cpsea70bnukar" path="res://entities/player/YeehawManager.gd" id="52_jjk8f"]
+[ext_resource type="PackedScene" uid="uid://mk3ntqvrekm" path="res://entities/player/sound_manager.tscn" id="53_jjk8f"]
+[ext_resource type="PackedScene" uid="uid://yojdw754gacw" path="res://components/health_component/health_component.tscn" id="55_cnswy"]
+[ext_resource type="PackedScene" uid="uid://cemasupcdws2g" path="res://components/hurtbox_component/hurtbox_component.tscn" id="56_q5bfg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_onrkg"]
+shader = ExtResource("2_g1dw6")
+shader_parameter/polar_coordinates = false
+shader_parameter/polar_center = Vector2(0.5, 0.5)
+shader_parameter/polar_zoom = 1.0
+shader_parameter/polar_repeat = 1.0
+shader_parameter/spin_rotation = 0.0
+shader_parameter/spin_speed = 1.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(0.874481, 0, 0.317496, 1)
+shader_parameter/colour_2 = Color(2.69532e-06, 0.502111, 0.58352, 1)
+shader_parameter/colour_3 = Color(0, 0, 0, 1)
+shader_parameter/contrast = 2.0
+shader_parameter/spin_amount = 0.36
+shader_parameter/pixel_filter = 700.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtlkk"]
+size = Vector2(833.373, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uw77l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wodsf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_kbbq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_akixf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3y563")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_sgfia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sv458")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_pth52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_4iu2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_0q7bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qb5t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qsjf6")
+}],
+"loop": false,
+"name": &"reload_end",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7otdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c112w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u37te")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ssgi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rtlkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a2brg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_arp52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jjk8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cnswy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_q5bfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_p22ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7rgwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_24so6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sk710")
+}],
+"loop": false,
+"name": &"reload_start",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_e7oew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c35mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_65viv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x7c3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bjvpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s7qer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g4c7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_knn7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7pqkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wodsf")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 25.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yw30f"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rkbax"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["Damageable", "Player"]]
+process_mode = 1
+floor_max_angle = 0.872665
+script = ExtResource("1_rkbax")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="HUD" type="Control" parent="HUD"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_kbbq5")
+
+[node name="ColorRect" type="ColorRect" parent="HUD/HUD"]
+visible = false
+material = SubResource("ShaderMaterial_onrkg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" parent="HUD/HUD" instance=ExtResource("39_u37te")]
+layout_mode = 1
+
+[node name="HatControl" type="Control" parent="HUD/HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Hat" type="Sprite2D" parent="HUD/HUD/HatControl"]
+texture_filter = 1
+position = Vector2(22, 305)
+rotation = 2.07871e-05
+scale = Vector2(2.924, 2)
+texture = ExtResource("3_wodsf")
+
+[node name="Item_root" parent="HUD/HUD/HatControl" instance=ExtResource("6_sk710")]
+position = Vector2(-443, 44)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="HUD/HUD/HatControl"]
+position = Vector2(22, 1108)
+rotation = 2.07871e-05
+scale = Vector2(2.319, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HUD/HUD/HatControl/StaticBody2D"]
+position = Vector2(3.6644, 0)
+shape = SubResource("RectangleShape2D_rtlkk")
+
+[node name="GunControl" type="Control" parent="HUD/HUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = -49.0
+offset_right = 92.0
+offset_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Gun" type="AnimatedSprite2D" parent="HUD/HUD/GunControl"]
+texture_filter = 1
+position = Vector2(-734, -375)
+rotation = 0.0688202
+scale = Vector2(2.199, 2.199)
+sprite_frames = SubResource("SpriteFrames_uw77l")
+animation = &"reload_start"
+autoplay = "idle"
+speed_scale = 1.2
+
+[node name="Guntip" type="Marker2D" parent="HUD/HUD/GunControl/Gun"]
+unique_name_in_owner = true
+position = Vector2(80.4884, 5.79219)
+rotation = -0.0895359
+scale = Vector2(0.46307, 0.46307)
+
+[node name="WhiskeyControl" type="Control" parent="HUD/HUD"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="whiskeyController" type="Node2D" parent="HUD/HUD/WhiskeyControl"]
+position = Vector2(-16, 14)
+rotation = 0.0549794
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/HUD/WhiskeyControl/whiskeyController"]
+texture_filter = 1
+position = Vector2(15, -230)
+rotation = 0.0263465
+scale = Vector2(2, 2)
+texture = ExtResource("43_sk710")
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/HUD/WhiskeyControl/whiskeyController/Sprite2D"]
+z_index = -1
+position = Vector2(61.4286, -11.4286)
+texture = ExtResource("44_kbbq5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="HUD/HUD/WhiskeyControl/whiskeyController/Sprite2D"]
+z_index = -2
+position = Vector2(67.1429, 46.1905)
+texture = ExtResource("45_akixf")
+
+[node name="Label" type="Label" parent="HUD/HUD/WhiskeyControl/whiskeyController/Sprite2D"]
+texture_filter = 1
+offset_left = 32.2196
+offset_top = 23.8964
+offset_right = 94.2197
+offset_bottom = 46.8964
+rotation = -0.0940651
+text = "HEALTH"
+
+[node name="Label2" type="Label" parent="HUD/HUD/WhiskeyControl/whiskeyController/Sprite2D"]
+texture_filter = 1
+offset_left = 33.6463
+offset_top = 38.0742
+offset_right = 95.6463
+offset_bottom = 61.0742
+rotation = -0.0940651
+text = "100%"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HUD/HUD/WhiskeyControl/whiskeyController"]
+z_index = -1
+offset_left = 44.0
+offset_top = -221.0
+offset_right = 207.0
+offset_bottom = 69.0
+rotation = -0.107266
+scale = Vector2(1.1, 1.1)
+color = Color(0.896037, 0.19976, 0, 1)
+
+[node name="Crosshair" type="ColorRect" parent="HUD/HUD"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CenterUiElement" type="Control" parent="HUD/HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -29.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.9, 0.9)
+
+[node name="centerContoller" type="Node2D" parent="HUD/HUD/CenterUiElement"]
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/HUD/CenterUiElement/centerContoller"]
+texture_filter = 1
+position = Vector2(0, -147)
+scale = Vector2(1.495, 1.495)
+texture = ExtResource("43_p22ii")
+
+[node name="CylControl" type="Control" parent="HUD/HUD/CenterUiElement/centerContoller"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CYLROOT" type="Node2D" parent="HUD/HUD/CenterUiElement/centerContoller/CylControl"]
+position = Vector2(0, -101)
+
+[node name="Cylinder" type="Sprite2D" parent="HUD/HUD/CenterUiElement/centerContoller/CylControl/CYLROOT"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(0.999969, -5)
+rotation = 0.596973
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("16_c35mf")
+
+[node name="chamber0" type="Node2D" parent="HUD/HUD/CenterUiElement/centerContoller/CylControl/CYLROOT/Cylinder"]
+position = Vector2(-27.6885, -42.4649)
+scale = Vector2(0.923066, 0.923066)
+
+[node name="chamber1" type="Node2D" parent="HUD/HUD/CenterUiElement/centerContoller/CylControl/CYLROOT/Cylinder"]
+position = Vector2(-50.917, 4.59289)
+scale = Vector2(0.923066, 0.923066)
+
+[node name="chamber2" type="Node2D" parent="HUD/HUD/CenterUiElement/centerContoller/CylControl/CYLROOT/Cylinder"]
+position = Vector2(-22.4756, 46.9377)
+scale = Vector2(0.923066, 0.923066)
+
+[node name="chamber3" type="Node2D" parent="HUD/HUD/CenterUiElement/centerContoller/CylControl/CYLROOT/Cylinder"]
+position = Vector2(28.3535, 42.7659)
+scale = Vector2(0.923066, 0.923066)
+
+[node name="chamber4" type="Node2D" parent="HUD/HUD/CenterUiElement/centerContoller/CylControl/CYLROOT/Cylinder"]
+position = Vector2(51.8235, -2.06879)
+scale = Vector2(0.923066, 0.923066)
+
+[node name="chamber5" type="Node2D" parent="HUD/HUD/CenterUiElement/centerContoller/CylControl/CYLROOT/Cylinder"]
+position = Vector2(22.8409, -45.2546)
+scale = Vector2(0.923066, 0.923066)
+
+[node name="YEEHAWGauge" type="Node2D" parent="HUD/HUD/CenterUiElement/centerContoller"]
+position = Vector2(-234, -58)
+
+[node name="Sprite2D3" type="Sprite2D" parent="HUD/HUD/CenterUiElement/centerContoller/YEEHAWGauge"]
+texture_filter = 1
+position = Vector2(-4, -4)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("45_7rgwd")
+
+[node name="NeedleControl" type="Node2D" parent="HUD/HUD/CenterUiElement/centerContoller/YEEHAWGauge"]
+unique_name_in_owner = true
+position = Vector2(0, 39)
+
+[node name="Needle_sprite" type="Sprite2D" parent="HUD/HUD/CenterUiElement/centerContoller/YEEHAWGauge/NeedleControl"]
+texture_filter = 1
+position = Vector2(-33, -7)
+rotation = -0.118067
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("46_24so6")
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/HUD/CenterUiElement/centerContoller/YEEHAWGauge"]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("47_sk710")
+
+[node name="Pouch" type="Node2D" parent="HUD/HUD/CenterUiElement/centerContoller"]
+position = Vector2(240, -18)
+rotation = 0.0668971
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/HUD/CenterUiElement/centerContoller/Pouch"]
+texture_filter = 1
+position = Vector2(-10.3468, 11.7023)
+scale = Vector2(1.865, 1.865)
+texture = ExtResource("48_kbbq5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_yw30f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_rkbax")
+
+[node name="Head" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.845576, 0)
+
+[node name="Camera" type="Camera3D" parent="Head"]
+unique_name_in_owner = true
+
+[node name="interaction" type="RayCast3D" parent="Head/Camera"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -3.74, 0)
+
+[node name="bullet_raycast" type="RayCast3D" parent="Head/Camera"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -999, 0)
+
+[node name="projectile_raycast" type="RayCast3D" parent="Head/Camera"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -999, 0)
+
+[node name="grab_point" type="Marker3D" parent="Head/Camera"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0052557, -0.371825, -2.41698)
+
+[node name="cluster_raycasts" type="Node3D" parent="Head/Camera"]
+unique_name_in_owner = true
+
+[node name="kick" parent="Head/Camera" instance=ExtResource("19_t1t22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.710692, 0)
+
+[node name="weapon_manager" type="Node" parent="." node_paths=PackedStringArray("player", "animation_sprite", "bullet_raycast", "cluster_raycasts", "projectile_raycast", "cylinder_node")]
+unique_name_in_owner = true
+script = ExtResource("16_32hag")
+player = NodePath("..")
+animation_sprite = NodePath("../HUD/HUD/GunControl/Gun")
+bullet_raycast = NodePath("../Head/Camera/bullet_raycast")
+cluster_raycasts = NodePath("../Head/Camera/cluster_raycasts")
+projectile_raycast = NodePath("../Head/Camera/projectile_raycast")
+cylinder_node = NodePath("../HUD/HUD/CenterUiElement/centerContoller/CylControl/CYLROOT/Cylinder")
+
+[node name="YEEHAW" type="Node3D" parent="."]
+script = ExtResource("52_jjk8f")
+
+[node name="sound_manager" parent="." instance=ExtResource("53_jjk8f")]
+unique_name_in_owner = true
+
+[node name="MoonBoots" parent="." instance=ExtResource("47_7otdo")]
+
+[node name="HealthComponent" parent="." instance=ExtResource("55_cnswy")]
+unique_name_in_owner = true
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("56_q5bfg")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxComponent"]
+shape = SubResource("CapsuleShape3D_yw30f")
+
+[connection signal="animation_finished" from="HUD/HUD/GunControl/Gun" to="weapon_manager" method="_on_animation_finished"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

@@ -1,0 +1,162 @@
+[gd_scene load_steps=13 format=3 uid="uid://ck21of511qdig"]
+
+[ext_resource type="Script" uid="uid://bv7xn7iktaigp" path="res://scenes/TitleScene/main_menu.gd" id="1_0w0py"]
+[ext_resource type="Texture2D" uid="uid://baemle3ko03n4" path="res://scenes/TitleScene/sprites/inter_title_background.png" id="1_1526m"]
+[ext_resource type="Texture2D" uid="uid://cyfka7qbblito" path="res://scenes/TitleScene/sprites/inter_title_SUN2.png" id="2_0w0py"]
+[ext_resource type="Texture2D" uid="uid://rjjy7ful7thh" path="res://scenes/TitleScene/sprites/inter_COWBOY.png" id="3_at53q"]
+[ext_resource type="FontFile" uid="uid://bh8g2xeo878o7" path="res://scenes/TitleScene/Fonts/Pilar Display Typeface.ttf" id="4_d5j4h"]
+[ext_resource type="FontFile" uid="uid://bnmmv8jk6gp5q" path="res://scenes/TitleScene/Fonts/Saddlebag.ttf" id="5_m24je"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s30xa"]
+texture = ExtResource("1_1526m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tjjf4"]
+texture = ExtResource("2_0w0py")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_en5d4"]
+texture = ExtResource("3_at53q")
+
+[sub_resource type="Theme" id="Theme_5juwe"]
+Label/fonts/font = ExtResource("4_d5j4h")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mmcq7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1526m"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0w0py")
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleArt" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="Panel" parent="TitleArt"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_s30xa")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sun" type="Panel" parent="TitleArt"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tjjf4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cowboy" type="Panel" parent="TitleArt"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_en5d4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.00052083336
+anchor_top = 0.037962962
+anchor_right = 0.9994792
+anchor_bottom = 0.40185186
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Title/CenterContainer"]
+layout_mode = 2
+theme = SubResource("Theme_5juwe")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0.21960784, 1)
+theme_override_constants/outline_size = 19
+theme_override_font_sizes/font_size = 174
+text = "INTERMUNDIAL"
+horizontal_alignment = 1
+
+[node name="Options" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = -179.0
+offset_right = 173.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="new_run" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_m24je")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mmcq7")
+text = "New Run"
+
+[node name="Panel" type="Panel" parent="Options/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30.385)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1526m")
+
+[node name="test_world" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_m24je")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mmcq7")
+text = "TEST WORLD"
+
+[node name="Panel2" type="Panel" parent="Options/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30.385)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1526m")
+
+[node name="settings" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_m24je")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mmcq7")
+text = "SETTINGS"
+
+[connection signal="pressed" from="Options/VBoxContainer/new_run" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/test_world" to="." method="_on_test_world_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/settings" to="." method="_on_settings_pressed"]

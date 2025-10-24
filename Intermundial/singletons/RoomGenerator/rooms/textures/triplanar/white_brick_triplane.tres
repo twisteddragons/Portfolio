@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://duycmlo81rcnd"]
+
+[ext_resource type="Texture2D" uid="uid://dpmb2i8njwy4x" path="res://singletons/RoomGenerator/rooms/textures/raw_imgs/white_brick.png" id="1_smttc"]
+
+[resource]
+albedo_texture = ExtResource("1_smttc")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0

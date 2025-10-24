@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://die7vjrqdoj74"]
+
+[ext_resource type="PackedScene" uid="uid://bk7ym24f7h0b4" path="res://singletons/RoomGenerator/rooms/RoomProps/Power_pole/PowerPole_1/power_pole_1.tscn" id="2_mbv16"]
+[ext_resource type="PackedScene" uid="uid://bkq1f2in0v0kx" path="res://singletons/RoomGenerator/rooms/Blender_rooms/test_map/test.blend" id="2_qwye8"]
+[ext_resource type="PackedScene" uid="uid://bl0rr2sr3lrw7" path="res://singletons/RoomGenerator/rooms/RoomProps/Power_pole/PowerPole_2/power_pole_2.tscn" id="3_7d52k"]
+[ext_resource type="PackedScene" uid="uid://uhixp0gnajfo" path="res://singletons/RoomGenerator/rooms/RoomProps/RadioDish/radio_dish.tscn" id="4_rjthy"]
+[ext_resource type="PackedScene" uid="uid://dxypmdn1iq55p" path="res://singletons/RoomGenerator/rooms/RoomProps/RadioTower/radio_tower.tscn" id="5_76pox"]
+[ext_resource type="PackedScene" uid="uid://bxmup5doyjgs3" path="res://singletons/RoomGenerator/rooms/RoomProps/WindMill/wind_mill.tscn" id="6_rla3r"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="test" parent="." instance=ExtResource("2_qwye8")]
+
+[node name="LocalProps" type="Node3D" parent="."]
+
+[node name="PowerPole1" parent="LocalProps" instance=ExtResource("2_mbv16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30.700706)
+
+[node name="PowerPole2" parent="LocalProps" instance=ExtResource("3_7d52k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 42.670467)
+
+[node name="RadioDish" parent="." instance=ExtResource("4_rjthy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.865897, 0.0825845, 37.02436)
+
+[node name="RadioTower" parent="." instance=ExtResource("5_76pox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.341206, 0.08149677, 38.005375)
+
+[node name="WindMill" parent="." instance=ExtResource("6_rla3r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.36084, 0.016125744, 37.93042)

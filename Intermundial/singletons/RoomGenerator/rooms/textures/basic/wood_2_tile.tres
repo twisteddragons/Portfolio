@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d0r4qhl3s5nmv"]
+
+[ext_resource type="Texture2D" uid="uid://x7pfx0x6vr6w" path="res://singletons/RoomGenerator/rooms/textures/raw_imgs/scruffed_wood.png" id="1_oivw4"]
+
+[resource]
+albedo_texture = ExtResource("1_oivw4")
+uv1_world_triplanar = true
+texture_filter = 0

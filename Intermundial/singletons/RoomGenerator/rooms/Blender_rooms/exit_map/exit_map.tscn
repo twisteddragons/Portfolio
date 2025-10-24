@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b41mgp8e0gmqm"]
+
+[ext_resource type="PackedScene" uid="uid://ch3g3mhpigooa" path="res://singletons/RoomGenerator/rooms/Blender_rooms/exit_map/end.blend" id="1_00sur"]
+[ext_resource type="Script" uid="uid://c2nchh2r10ukk" path="res://singletons/RoomGenerator/rooms/Blender_rooms/exit_map/exit_room_logics.gd" id="1_d37pi"]
+[ext_resource type="PackedScene" uid="uid://didiptsyjywvr" path="res://singletons/RoomGenerator/rooms/room_logics/base_logic/entrance.tscn" id="2_igc62"]
+
+[node name="exit_room" type="Node3D"]
+script = ExtResource("1_d37pi")
+
+[node name="end" parent="." instance=ExtResource("1_00sur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.252543, 0)
+
+[node name="Entrance" parent="." instance=ExtResource("2_igc62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.92579)

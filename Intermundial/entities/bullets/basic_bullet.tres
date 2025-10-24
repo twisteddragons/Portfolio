@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SpecialBullet" load_steps=4 format=3 uid="uid://dqdk2b68n63w8"]
+
+[ext_resource type="Script" uid="uid://dr2f7i1l4k7ev" path="res://entities/bullets/special_bullet_resource.gd" id="1_n5gx4"]
+[ext_resource type="Texture2D" uid="uid://cjkr4ocyf04wt" path="res://entities/player/hud/cyl/bullet_back.png" id="1_tyobs"]
+[ext_resource type="Texture2D" uid="uid://bx42pu21xwhw3" path="res://entities/bullets/basicbullet_front_prototype.png" id="3_0fl7s"]
+
+[resource]
+script = ExtResource("1_n5gx4")
+damage = 35
+side_sprite = ExtResource("3_0fl7s")
+back_sprite = ExtResource("1_tyobs")
+fire_sound_uid = "uid://cjeoke7xvw40g"
+metadata/_custom_type_script = "uid://dr2f7i1l4k7ev"

@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://di1oimjhqtjx"]
+
+[ext_resource type="Script" uid="uid://xlvt17mosgyq" path="res://entities/bullets/projectile/projectile.gd" id="1_frnuo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpy8d"]
+albedo_color = Color(0.960784, 0.478431, 0.12549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_frnuo"]
+material = SubResource("StandardMaterial3D_tpy8d")
+size = Vector3(0.05, 1, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11bwc"]
+albedo_color = Color(0.960784, 0.478431, 0.12549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oa6p3"]
+material = SubResource("StandardMaterial3D_11bwc")
+size = Vector3(0.1, 0.3, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bi1aw"]
+albedo_color = Color(0, 0.690196, 0.12549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ckc1i"]
+material = SubResource("StandardMaterial3D_bi1aw")
+size = Vector3(0.08, 0.12, 0.08)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frnuo"]
+albedo_color = Color(0.960784, 0.478431, 0.12549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sgfhg"]
+material = SubResource("StandardMaterial3D_frnuo")
+size = Vector3(0.15, 0.4, 0.15)
+
+[node name="Projectile" type="Node3D"]
+script = ExtResource("1_frnuo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_frnuo")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.50116, 0)
+target_position = Vector3(0, 1.6, 0)
+
+[node name="carrot_mode" type="Node3D" parent="."]
+visible = false
+
+[node name="carrot3" type="MeshInstance3D" parent="carrot_mode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115968, 0)
+mesh = SubResource("BoxMesh_oa6p3")
+skeleton = NodePath("../..")
+
+[node name="carrot2" type="MeshInstance3D" parent="carrot_mode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.541546, 0)
+mesh = SubResource("BoxMesh_ckc1i")
+skeleton = NodePath("../..")
+
+[node name="carrot1" type="MeshInstance3D" parent="carrot_mode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.210675, 0)
+mesh = SubResource("BoxMesh_sgfhg")
+skeleton = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="."]

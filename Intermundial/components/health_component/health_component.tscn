@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://yojdw754gacw"]
+
+[ext_resource type="Script" uid="uid://mnqu8t5ifhto" path="res://components/health_component/health_component.gd" id="1_ol33d"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ol33d"]
+viewport_path = NodePath("Healthbar/SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pejlg"]
+bg_color = Color(0.17641908, 0.17641911, 0.17641899, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gunwg"]
+bg_color = Color(0.7816067, 0, 0.2575431, 1)
+
+[node name="HealthComponent" type="Node3D"]
+script = ExtResource("1_ol33d")
+
+[node name="Healthbar" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Sprite3D" type="Sprite3D" parent="Healthbar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8316853, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_ol33d")
+
+[node name="SubViewport" type="SubViewport" parent="Healthbar"]
+disable_3d = true
+transparent_bg = true
+
+[node name="Control" type="Control" parent="Healthbar/SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthProgress" type="ProgressBar" parent="Healthbar/SubViewport/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44791666
+anchor_top = 0.48842594
+anchor_right = 0.5520833
+anchor_bottom = 0.5115741
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_pejlg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gunwg")
+value = 45.18
+show_percentage = false
+metadata/_edit_use_anchors_ = true

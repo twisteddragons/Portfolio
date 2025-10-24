@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://den1fhqu7kwsp"]
+
+[ext_resource type="Script" uid="uid://br5wpuxwwhyhi" path="res://entities/spawner/spawner.gd" id="1_g400x"]
+
+[node name="Spawner" type="Node3D"]
+process_mode = 1
+script = ExtResource("1_g400x")
+
+[node name="Spawn_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Spawn_timer" to="." method="_on_timer_timeout"]

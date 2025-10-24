@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cl1yak4cryg5d"
+path="res://.godot/imported/10 The Fourth Colour.wav-4f8d65ab9a0aa7d7c61f4c0d9a564b9a.sample"
+
+[deps]
+
+source_file="res://music/KingGizzard/10 The Fourth Colour.wav"
+dest_files=["res://.godot/imported/10 The Fourth Colour.wav-4f8d65ab9a0aa7d7c61f4c0d9a564b9a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

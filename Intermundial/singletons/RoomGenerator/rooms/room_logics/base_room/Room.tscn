@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjptcfhbgwmre"]
+
+[ext_resource type="Script" uid="uid://bt0xc3epu8vvl" path="res://singletons/RoomGenerator/rooms/room_logics/base_room/room_logic.gd" id="1_jymy4"]
+[ext_resource type="PackedScene" uid="uid://bv7w3o6fswovk" path="res://singletons/RoomGenerator/rooms/RoomProps/GamePlay/PayPhone/pay_phone.tscn" id="2_akcl3"]
+[ext_resource type="PackedScene" uid="uid://didiptsyjywvr" path="res://singletons/RoomGenerator/rooms/room_logics/base_logic/entrance.tscn" id="2_pj31y"]
+[ext_resource type="PackedScene" uid="uid://bts8qc44ljmr6" path="res://singletons/RoomGenerator/rooms/room_logics/base_logic/exit.tscn" id="3_akcl3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dt2f3"]
+size = Vector3(37.67679, 34.06306, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xc65n"]
+albedo_color = Color(9.62615e-07, 0.71534, 0.9106114, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3rtrp"]
+material = SubResource("StandardMaterial3D_xc65n")
+
+[node name="Room" type="Node3D"]
+script = ExtResource("1_jymy4")
+
+[node name="RoomMesh" type="Node3D" parent="."]
+
+[node name="RoomProps" type="Node3D" parent="RoomMesh"]
+
+[node name="StaticProps" type="Node3D" parent="RoomMesh/RoomProps"]
+
+[node name="PhysicsProps" type="Node3D" parent="RoomMesh/RoomProps"]
+
+[node name="CheckPoint" type="Node3D" parent="."]
+
+[node name="Checkpoint_area" type="Area3D" parent="CheckPoint"]
+
+[node name="Checkpoint_col" type="CollisionShape3D" parent="CheckPoint/Checkpoint_area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004802704, 0.0040972233, 0)
+shape = SubResource("BoxShape3D_dt2f3")
+
+[node name="PlayerRespawnPoint" type="Node3D" parent="CheckPoint"]
+
+[node name="debug" type="MeshInstance3D" parent="CheckPoint/PlayerRespawnPoint"]
+mesh = SubResource("BoxMesh_3rtrp")
+
+[node name="PayPhone" parent="CheckPoint" instance=ExtResource("2_akcl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2708862, 0, 0)
+
+[node name="Entrance" parent="." instance=ExtResource("2_pj31y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.4277017)
+
+[node name="Exit" parent="." instance=ExtResource("3_akcl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.1694202)
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[connection signal="body_entered" from="CheckPoint/Checkpoint_area" to="." method="_on_checkpoint_area_body_entered"]

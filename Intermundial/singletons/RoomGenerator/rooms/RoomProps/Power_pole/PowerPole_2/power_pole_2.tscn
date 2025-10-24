@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl0rr2sr3lrw7"]
+
+[ext_resource type="PackedScene" uid="uid://bxv2t2v6j60h5" path="res://singletons/RoomGenerator/rooms/RoomProps/Power_pole/PowerPole_2/PowerPole_2.blend" id="1_g1x1l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g1x1l"]
+size = Vector3(0.58813477, 12.497253, 0.5073242)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1mus6"]
+size = Vector3(4.777405, 0.44726563, 0.29699707)
+
+[node name="PowerPole2" type="StaticBody3D"]
+
+[node name="PowerPole_2" parent="." instance=ExtResource("1_g1x1l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008178711, 6.2429504, -0.0041503906)
+shape = SubResource("BoxShape3D_g1x1l")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025299072, 9.598481, 0.35150146)
+shape = SubResource("BoxShape3D_1mus6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025299072, 11.3786545, 0.35150146)
+shape = SubResource("BoxShape3D_1mus6")

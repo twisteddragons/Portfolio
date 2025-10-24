@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cainjel63bnv3"]
+
+[ext_resource type="Script" uid="uid://dmtboqcpb54il" path="res://entities/effect_entities/gas_cloud/gas_cloud.gd" id="1_jl0q8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2yp4"]
+transparency = 1
+albedo_color = Color(0.45098, 0.635294, 0.207843, 0.752941)
+
+[sub_resource type="TorusMesh" id="TorusMesh_jl0q8"]
+material = SubResource("StandardMaterial3D_j2yp4")
+inner_radius = 0.001
+outer_radius = 2.124
+rings = 32
+ring_segments = 16
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jl0q8"]
+radius = 2.146
+
+[node name="GasCloud" type="Node3D"]
+script = ExtResource("1_jl0q8")
+
+[node name="Area3D" type="Area3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.864575, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+unique_name_in_owner = true
+mesh = SubResource("TorusMesh_jl0q8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_jl0q8")
+
+[node name="Timer" type="Timer" parent="."]

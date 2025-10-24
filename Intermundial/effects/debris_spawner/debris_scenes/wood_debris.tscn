@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt6n20d1lgkgq"]
+
+[ext_resource type="Texture2D" uid="uid://co1q46njogh53" path="res://effects/debris_spawner/debris_scenes/wood_debris.png" id="1_aj8uc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aj8uc"]
+transparency = 1
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("1_aj8uc")
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bwj43"]
+size = Vector3(0.405701, 1, 0.127625)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.933912, 0.357504, 0, -0.277821, 0.725755, 0.629361, 0.224999, -0.587768, 0.777113, 0, -0.00193026, 0.000683598)
+material_override = SubResource("StandardMaterial3D_aj8uc")
+texture = ExtResource("1_aj8uc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.777113, 0.629361, 0, -0.629361, 0.777113, -0.0144958, 0.00193026, 0.00545043)
+shape = SubResource("BoxShape3D_bwj43")

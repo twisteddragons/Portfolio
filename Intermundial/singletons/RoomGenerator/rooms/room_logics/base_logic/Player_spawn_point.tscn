@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcke6f5ckhwuu"]
+
+[ext_resource type="Script" uid="uid://r0qm2cheeglh" path="res://singletons/RoomGenerator/rooms/room_logics/base_logic/player_spawn_point.gd" id="1_ikn53"]
+[ext_resource type="PackedScene" uid="uid://upcuiiq80d5n" path="res://entities/player/player.tscn" id="2_awsom"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jc2vp"]
+albedo_color = Color(5.7756904e-07, 0.62913454, 0.32805872, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o8123"]
+material = SubResource("StandardMaterial3D_jc2vp")
+
+[node name="PlayerSpawnPoint" type="Node3D"]
+script = ExtResource("1_ikn53")
+player = ExtResource("2_awsom")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_o8123")

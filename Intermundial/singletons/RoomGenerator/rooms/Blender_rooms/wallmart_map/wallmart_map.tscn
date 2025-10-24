@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://dif2qd4a0bijg"]
+
+[ext_resource type="PackedScene" uid="uid://cb6pn120wbdut" path="res://singletons/RoomGenerator/rooms/Blender_rooms/wallmart_map/wallmart.blend" id="1_bsrwh"]
+[ext_resource type="Script" uid="uid://bt0xc3epu8vvl" path="res://singletons/RoomGenerator/rooms/room_logics/base_room/room_logic.gd" id="1_ikkqt"]
+[ext_resource type="PackedScene" uid="uid://efsj57rclmyc" path="res://singletons/RoomGenerator/rooms/room_logics/doors/door.tscn" id="3_ja2yt"]
+[ext_resource type="PackedScene" uid="uid://didiptsyjywvr" path="res://singletons/RoomGenerator/rooms/room_logics/base_logic/entrance.tscn" id="4_ikkqt"]
+[ext_resource type="PackedScene" uid="uid://bts8qc44ljmr6" path="res://singletons/RoomGenerator/rooms/room_logics/base_logic/exit.tscn" id="5_iy3ie"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_babuj"]
+size = Vector3(55.6626, 39.2998, 50.716)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_ikkqt")
+
+[node name="wallmart" parent="." instance=ExtResource("1_bsrwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.249485, 0)
+
+[node name="AnimatableBody3D" parent="." instance=ExtResource("3_ja2yt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00420284, -0.254052, 4.46812)
+
+[node name="AnimatableBody3D2" parent="." instance=ExtResource("3_ja2yt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0161178, -0.406785, -47.1066)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.559196, 12.1509, -22.0533)
+shape = SubResource("BoxShape3D_babuj")
+
+[node name="Entrance" parent="." instance=ExtResource("4_ikkqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.7711)
+
+[node name="Exit" parent="." instance=ExtResource("5_iy3ie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48.4785)

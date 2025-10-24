@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://os6jswkshqnd"]
+
+[ext_resource type="Texture2D" uid="uid://jjb42i3s4f2v" path="res://singletons/RoomGenerator/rooms/textures/raw_imgs/sand_tile.png" id="1_4b2t0"]
+
+[resource]
+albedo_texture = ExtResource("1_4b2t0")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpecialBullet" load_steps=5 format=3 uid="uid://cckqlswr24ra5"]
+
+[ext_resource type="Texture2D" uid="uid://dts2i85a2blil" path="res://entities/bullets/bullet_sprites/bullet_back_dev.png" id="1_x3uhe"]
+[ext_resource type="Script" uid="uid://djq0j7yqxdqih" path="res://entities/bullets/_old_bullets/dev_bullet/dev_bullet.gd" id="2_q32su"]
+[ext_resource type="Texture2D" uid="uid://kqybot23b8oo" path="res://entities/bullets/_old_bullets/dev_bullet/devbullet_front_prototype.png" id="3_q32su"]
+[ext_resource type="Script" uid="uid://dr2f7i1l4k7ev" path="res://entities/bullets/special_bullet_resource.gd" id="3_x3uhe"]
+
+[resource]
+script = ExtResource("3_x3uhe")
+bullet_type = 1
+fire_type = 2
+projectile_gravity_scale = 0.0
+projectile_speed = 70.0
+damage = 100
+effect_script_queue = Array[Script]([])
+regular_effect_script_queue = Array[Script]([ExtResource("2_q32su")])
+side_sprite = ExtResource("3_q32su")
+back_sprite = ExtResource("1_x3uhe")
+fire_sound_uid = "uid://beclhyfvdkhxj"
+metadata/_custom_type_script = "uid://dr2f7i1l4k7ev"

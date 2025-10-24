@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://478fw35bnc4n"]
+
+[ext_resource type="PackedScene" uid="uid://k15p6yvshjd" path="res://singletons/RoomGenerator/rooms/Blender_rooms/saloon.blend" id="1_qufjg"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="saloon" parent="." instance=ExtResource("1_qufjg")]

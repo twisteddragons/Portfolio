@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://dnlfn3a7i50d2"]
+
+[ext_resource type="PackedScene" uid="uid://brfmh8idofcwt" path="res://entities/items/passive_items/sample_item/sample_item_effect.tscn" id="1_x4ie3"]
+[ext_resource type="Script" uid="uid://ocdtybj6yyie" path="res://entities/items/item_resource.gd" id="2_wvsqe"]
+
+[resource]
+script = ExtResource("2_wvsqe")
+effect_scene = ExtResource("1_x4ie3")
+rarity = 1
+shop_cost = 1
+metadata/_custom_type_script = "uid://ocdtybj6yyie"

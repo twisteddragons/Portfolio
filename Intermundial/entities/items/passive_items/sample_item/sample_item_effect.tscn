@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://brfmh8idofcwt"]
+
+[ext_resource type="Script" uid="uid://bvhfdytkqbre" path="res://entities/items/passive_items/sample_item/sample_item_effect.gd" id="1_g4tyu"]
+[ext_resource type="AudioStream" uid="uid://cr8aaqp5yfmlf" path="res://entities/player/sounds/garble7.mp3" id="2_hgh7d"]
+
+[node name="SampleItemEffect" type="Node3D"]
+script = ExtResource("1_g4tyu")
+
+[node name="FunnySound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_hgh7d")

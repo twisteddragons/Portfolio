@@ -1,0 +1,328 @@
+[gd_scene load_steps=46 format=3 uid="uid://dsmbb20tc30ov"]
+
+[ext_resource type="PackedScene" uid="uid://cpp50cdxeetcn" path="res://entities/enemies/enemy_meatball/Meatball_anim2.glb" id="1_q6i10"]
+[ext_resource type="Script" uid="uid://f1estj7yowq3" path="res://entities/enemies/enemy_meatball/meatball.gd" id="1_r7153"]
+[ext_resource type="Material" uid="uid://buok52cqn158a" path="res://entities/enemies/enemy_drifter_animations/true_black.tres" id="2_a0il4"]
+[ext_resource type="Script" uid="uid://dsegieqspf2rn" path="res://entities/enemies/audio_manager.gd" id="2_fg5p7"]
+[ext_resource type="Texture2D" uid="uid://bntmojr75h775" path="res://entities/enemies/enemy_meatball/Meatball_laser_effect/frame0004.png" id="2_k0heo"]
+[ext_resource type="AudioStream" uid="uid://dfax0uicg26v2" path="res://entities/enemies/voicelines/jasper/everygun.mp3" id="3_4s7ac"]
+[ext_resource type="Texture2D" uid="uid://rm5huuyy5o1q" path="res://entities/enemies/enemy_meatball/Meatball_laser_effect/frame0005.png" id="3_a0il4"]
+[ext_resource type="AudioStream" uid="uid://dbctrlmn6jnec" path="res://entities/enemies/voicelines/jasper/hambuga.mp3" id="4_mvvxp"]
+[ext_resource type="Texture2D" uid="uid://csfujepvlju3o" path="res://entities/enemies/enemy_meatball/Meatball_laser_effect/frame0001.png" id="4_x4xar"]
+[ext_resource type="AudioStream" uid="uid://csvc6ov5xyofd" path="res://entities/enemies/voicelines/jasper/smitherine.mp3" id="5_8fc7a"]
+[ext_resource type="Texture2D" uid="uid://dumb36ybj43sx" path="res://entities/enemies/enemy_meatball/Meatball_laser_effect/frame0002.png" id="5_75jkt"]
+[ext_resource type="AudioStream" uid="uid://d0n8h2o8wri5h" path="res://entities/enemies/voicelines/jasper/thistown.mp3" id="6_5bc25"]
+[ext_resource type="Texture2D" uid="uid://pjohyw207kd4" path="res://entities/enemies/enemy_meatball/Meatball_laser_effect/frame0003.png" id="6_msp28"]
+[ext_resource type="AudioStream" uid="uid://dghug6my7mn38" path="res://entities/enemies/voicelines/jasper/yeehaw.mp3" id="7_2wp12"]
+[ext_resource type="Texture2D" uid="uid://se0pw13paut3" path="res://entities/enemies/enemy_meatball/Meatball_laser_effect/frame0006.png" id="7_4ntat"]
+[ext_resource type="PackedScene" uid="uid://cemasupcdws2g" path="res://components/hurtbox_component/hurtbox_component.tscn" id="8_385h6"]
+[ext_resource type="Texture2D" uid="uid://dwanvo8fp0gq0" path="res://entities/enemies/enemy_meatball/Meatball_laser_effect/frame0007.png" id="8_t47s3"]
+[ext_resource type="PackedScene" uid="uid://yojdw754gacw" path="res://components/health_component/health_component.tscn" id="9_2gv2w"]
+[ext_resource type="Texture2D" uid="uid://dw686kghbwkug" path="res://entities/enemies/enemy_meatball/Meatball_laser_effect/frame0008.png" id="9_3lj8s"]
+[ext_resource type="PackedScene" uid="uid://8pbtomojxogw" path="res://components/velocity_component/velocity_component.tscn" id="10_jehjf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wto8p"]
+radius = 1.3195301
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5de27"]
+radius = 18.908
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8cgn0"]
+radius = 1.3241282
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usltg"]
+cull_mode = 2
+albedo_color = Color(1, 0.15598571, 0.23958299, 1)
+billboard_mode = 1
+
+[sub_resource type="Curve" id="Curve_5kfyy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.39766082, 0.84269667), 0.0, 0.0, 0, 0, Vector2(0.7660819, 0.056179762), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_r7153"]
+curve = SubResource("Curve_5kfyy")
+
+[sub_resource type="Curve" id="Curve_fg5p7"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.43274853, 3), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4s7ac"]
+curve = SubResource("Curve_fg5p7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mvvxp"]
+emission_shape = 1
+emission_sphere_radius = 2.0
+scale_min = 0.099999994
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_r7153")
+scale_over_velocity_curve = SubResource("CurveTexture_4s7ac")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8fc7a"]
+size = Vector2(0.09, 0.425)
+
+[sub_resource type="SphereMesh" id="SphereMesh_x4xar"]
+material = ExtResource("2_a0il4")
+radius = 1.6
+height = 3.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5bc25"]
+animation = &"attack_1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2wp12"]
+animation = &"attack_2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_385h6"]
+animation = &"attack_2_cooldown"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2gv2w"]
+animation = &"attack_2_windup"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jehjf"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wto8p"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5de27"]
+xfade_time = 0.2
+advance_condition = &"attack_1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8cgn0"]
+xfade_time = 0.4
+advance_condition = &"attack_2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pksmh"]
+xfade_time = 0.3
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mtdpx"]
+xfade_time = 0.1
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pqd01"]
+advance_condition = &"attack2_finished"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4db8v"]
+xfade_time = 0.3
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_pi5sh"]
+states/Start/position = Vector2(133, 84)
+states/attack_1/node = SubResource("AnimationNodeAnimation_5bc25")
+states/attack_1/position = Vector2(393, 38)
+states/attack_2/node = SubResource("AnimationNodeAnimation_2wp12")
+states/attack_2/position = Vector2(613, 170)
+states/attack_2_cooldown/node = SubResource("AnimationNodeAnimation_385h6")
+states/attack_2_cooldown/position = Vector2(792, 170)
+states/attack_2_windup/node = SubResource("AnimationNodeAnimation_2gv2w")
+states/attack_2_windup/position = Vector2(459, 170)
+states/idle/node = SubResource("AnimationNodeAnimation_jehjf")
+states/idle/position = Vector2(256, 84)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_wto8p"), "idle", "attack_1", SubResource("AnimationNodeStateMachineTransition_5de27"), "idle", "attack_2_windup", SubResource("AnimationNodeStateMachineTransition_8cgn0"), "attack_1", "idle", SubResource("AnimationNodeStateMachineTransition_pksmh"), "attack_2_windup", "attack_2", SubResource("AnimationNodeStateMachineTransition_mtdpx"), "attack_2", "attack_2_cooldown", SubResource("AnimationNodeStateMachineTransition_pqd01"), "attack_2_cooldown", "idle", SubResource("AnimationNodeStateMachineTransition_4db8v")]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5gjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k0heo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a0il4")
+}],
+"loop": true,
+"name": &"laser",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x4xar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_75jkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_msp28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_k0heo")
+}],
+"loop": false,
+"name": &"laser_charge",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4ntat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t47s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3lj8s")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"laser_end",
+"speed": 12.0
+}]
+
+[node name="MeatBall" type="CharacterBody3D" node_paths=PackedStringArray("velocity_component", "nav_dummy")]
+script = ExtResource("1_r7153")
+velocity_component = NodePath("Components/VelocityComponent")
+nav_dummy = NodePath("Nav_dummy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8656862, 0)
+shape = SubResource("SphereShape3D_wto8p")
+
+[node name="Nav_dummy" type="Node3D" parent="."]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Nav_dummy"]
+unique_name_in_owner = true
+
+[node name="Components" type="Node3D" parent="."]
+transform = Transform3D(0.99422413, 0, -0.10732264, 0, 1, 0, 0.10732264, 0, 0.99422413, 0, 0, 0)
+
+[node name="AudioComponent" type="Node3D" parent="Components"]
+script = ExtResource("2_fg5p7")
+voicelines = Array[Resource]([ExtResource("3_4s7ac"), ExtResource("4_mvvxp"), ExtResource("5_8fc7a"), ExtResource("6_5bc25"), ExtResource("7_2wp12")])
+
+[node name="voiceline_player" type="AudioStreamPlayer3D" parent="Components/AudioComponent"]
+volume_db = 8.602
+max_distance = 50.0
+
+[node name="voiceline_cooldown" type="Timer" parent="Components/AudioComponent"]
+
+[node name="DetectionComponent" type="Area3D" parent="Components"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99518, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/DetectionComponent"]
+shape = SubResource("SphereShape3D_5de27")
+
+[node name="vison_timer" type="Timer" parent="Components/DetectionComponent"]
+
+[node name="HurtboxComponent" parent="Components" instance=ExtResource("8_385h6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0224075, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Components/HurtboxComponent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.87711453, 0)
+shape = SubResource("SphereShape3D_8cgn0")
+
+[node name="HealthComponent" parent="Components" instance=ExtResource("9_2gv2w")]
+unique_name_in_owner = true
+
+[node name="RangedComponent" type="Node3D" parent="Components"]
+
+[node name="shoot_cooldown" type="Timer" parent="Components/RangedComponent"]
+
+[node name="VelocityComponent" parent="Components" node_paths=PackedStringArray("ground_raycast") instance=ExtResource("10_jehjf")]
+unique_name_in_owner = true
+affected_by_gravity = false
+is_flying = true
+hover_height = 4.0
+ground_raycast = NodePath("RayCast3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="Components/VelocityComponent"]
+
+[node name="Meatball_anim2" parent="." instance=ExtResource("1_q6i10")]
+transform = Transform3D(-0.5771564, 0, 0.16398264, 0, 0.6, 0, -0.16398264, 0, -0.5771564, 0.0038761026, 0, 0.0004184103)
+
+[node name="Skeleton3D" parent="Meatball_anim2/Armature_002" index="0"]
+bones/0/position = Vector3(5.8083076e-09, 0.12994415, 2.3970437e-09)
+bones/0/rotation = Quaternion(0.005966811, 0.0028254702, -0.014312858, 0.9998758)
+bones/1/position = Vector3(-1.0004689, 1.0619768, -1.1351931)
+bones/1/rotation = Quaternion(-0.062417228, -0.5942232, 0.46683443, 0.6519728)
+bones/2/position = Vector3(-1.1788131, 0.43228328, -1.1386443)
+bones/2/rotation = Quaternion(-0.029126246, -0.3581351, 0.81444025, 0.4556075)
+bones/3/position = Vector3(-1.5595107, 1.5642833, 0.04848764)
+bones/3/rotation = Quaternion(0.29817575, -0.33549502, 0.47025242, 0.7598665)
+bones/4/position = Vector3(-1.5004474, 1.7118019, 0.4818241)
+bones/4/rotation = Quaternion(0.33022365, -0.15594217, 0.41048208, 0.83554703)
+bones/5/position = Vector3(0.40341356, 1.2767735, 1.2697872)
+bones/5/rotation = Quaternion(0.5479233, 0.055508003, -0.042399894, 0.8336073)
+bones/6/position = Vector3(0.36025423, 0.47827736, 1.2788604)
+bones/6/rotation = Quaternion(0.91741395, 0.05449313, -0.085897006, 0.38471273)
+bones/7/position = Vector3(0.14451367, 1.7340548, -1.1359538)
+bones/7/rotation = Quaternion(-0.3965404, -0.14536335, -0.15911478, 0.8923608)
+bones/8/position = Vector3(-0.08964205, 1.5148051, -1.6599605)
+bones/8/rotation = Quaternion(-0.6102011, -0.009527235, -0.03379231, 0.79146826)
+bones/9/position = Vector3(-0.52139276, -0.22186081, 0.8594501)
+bones/9/rotation = Quaternion(0.6837557, -0.05111219, 0.25079885, 0.6833489)
+bones/10/position = Vector3(-0.42430845, -0.4943377, 0.8727113)
+bones/10/rotation = Quaternion(0.36554813, -0.041695982, 0.1573492, 0.91644824)
+bones/11/position = Vector3(0.4259451, 2.3495603, 0.5025156)
+bones/11/rotation = Quaternion(0.18429707, 0.033005524, -0.27701002, 0.94244933)
+bones/12/position = Vector3(-0.084884435, -0.20200466, -1.3403512)
+bones/12/rotation = Quaternion(0.45013648, -0.44169146, 0.7714148, -0.084882125)
+bones/13/position = Vector3(-1.6437491, 0.06371983, -0.19110289)
+bones/13/rotation = Quaternion(0.37058097, -0.24407081, 0.7089978, 0.548107)
+bones/14/position = Vector3(0.4299296, 0.74349725, 1.02932)
+bones/14/rotation = Quaternion(0.72042525, 0.10403593, -0.087176904, 0.68012077)
+bones/15/position = Vector3(-0.21299753, 2.0361986, 1.4028076)
+bones/15/rotation = Quaternion(0.4580793, 0.021952419, -0.044246234, 0.88753814)
+bones/15/scale = Vector3(0.99999994, 1.0000001, 0.9999999)
+bones/16/rotation = Quaternion(0.35115546, -0.14945754, 0.37385443, 0.84533143)
+bones/16/scale = Vector3(1.0000001, 1.0000001, 1)
+bones/17/rotation = Quaternion(0.51320434, 0.09664926, 0.42082667, 0.74174476)
+bones/17/scale = Vector3(1, 0.9999999, 1)
+bones/18/position = Vector3(-1.1095815, 0.76131195, -1.083885)
+bones/18/rotation = Quaternion(0.08009428, -0.56945527, 0.7053316, 0.41450316)
+bones/18/scale = Vector3(0.89927864, 0.89927876, 0.89927864)
+bones/19/rotation = Quaternion(-0.52064615, -0.6136338, 0.58924395, -0.07192207)
+bones/19/scale = Vector3(1.0387985, 1.0387985, 1.0387985)
+bones/20/position = Vector3(0.6313636, -0.5583904, -0.16587594)
+bones/20/rotation = Quaternion(-0.6308381, -0.29601124, 0.67442924, -0.24406123)
+bones/20/scale = Vector3(0.999999, 0.9999999, 0.9999998)
+bones/21/position = Vector3(1.5212282, 1.4370493, 0.12854092)
+bones/21/rotation = Quaternion(0.60463417, 0.39719033, -0.4686575, 0.5069691)
+bones/21/scale = Vector3(0.9999998, 0.9999998, 0.99999976)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Meatball_anim2/Armature_002/Skeleton3D" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0038986206, 0.47884655, -5.8039566e-11)
+material_override = SubResource("StandardMaterial3D_usltg")
+amount = 3
+lifetime = 1.5
+randomness = 0.3
+fixed_fps = 10
+process_material = SubResource("ParticleProcessMaterial_mvvxp")
+draw_pass_1 = SubResource("QuadMesh_8fc7a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Meatball_anim2/Armature_002/Skeleton3D" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011570073, 0.76530886, -0.1071838)
+mesh = SubResource("SphereMesh_x4xar")
+skeleton = NodePath("../..")
+
+[node name="AnimationTree" type="AnimationTree" parent="Meatball_anim2"]
+unique_name_in_owner = true
+root_node = NodePath("%AnimationTree/..")
+tree_root = SubResource("AnimationNodeStateMachine_pi5sh")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/attack2_finished = false
+parameters/conditions/attack_1 = false
+parameters/conditions/attack_2 = false
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Meatball_anim2"]
+transform = Transform3D(0.9945798, -0.0043575834, 0.10388449, 0.00013676984, 0.99917537, 0.040602416, -0.10397575, -0.040368132, 0.9937602, 0.65174603, 2.921063, 3.1193593)
+visible = false
+pixel_size = 0.1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_j5gjr")
+animation = &"laser"
+frame_progress = 0.10046792
+
+[connection signal="finished" from="Components/AudioComponent/voiceline_player" to="Components/AudioComponent" method="_on_voiceline_player_finished"]
+[connection signal="timeout" from="Components/AudioComponent/voiceline_cooldown" to="Components/AudioComponent" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Components/DetectionComponent" to="." method="_on_detection_component_body_entered"]
+[connection signal="body_exited" from="Components/DetectionComponent" to="." method="_on_detection_component_body_exited"]
+[connection signal="timeout" from="Components/RangedComponent/shoot_cooldown" to="Components" method="_on_shoot_cooldown_timeout"]
+
+[editable path="Meatball_anim2"]

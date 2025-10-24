@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SpecialBullet" load_steps=6 format=3 uid="uid://b42l5ev532gn8"]
+
+[ext_resource type="Texture2D" uid="uid://dlw003w221ya4" path="res://entities/bullets/_old_bullets/airblast_shell/airblast_back.png" id="1_xhr4v"]
+[ext_resource type="Script" uid="uid://bor6lgrxnisgb" path="res://entities/bullets/_old_bullets/airblast_shell/airblast_bullet_on_fire.gd" id="2_jm7xw"]
+[ext_resource type="Script" uid="uid://broyv5yc8fv41" path="res://entities/bullets/_old_bullets/airblast_shell/airblast_bullet_regular.gd" id="3_c6bui"]
+[ext_resource type="Script" uid="uid://dr2f7i1l4k7ev" path="res://entities/bullets/special_bullet_resource.gd" id="3_f0hkj"]
+[ext_resource type="Texture2D" uid="uid://cntrwa5c55ueo" path="res://entities/bullets/_old_bullets/airblast_shell/airblast_side.png" id="4_jm7xw"]
+
+[resource]
+script = ExtResource("3_f0hkj")
+bullet_type = 6
+fire_type = 1
+projectile_gravity_scale = 0.0
+projectile_speed = 70.0
+damage = 0
+effect_script_queue = Array[Script]([])
+regular_effect_script_queue = Array[Script]([ExtResource("3_c6bui")])
+on_fire_effect_script_queue = Array[Script]([ExtResource("2_jm7xw")])
+side_sprite = ExtResource("4_jm7xw")
+back_sprite = ExtResource("1_xhr4v")
+fire_sound_uid = "uid://beclhyfvdkhxj"
+metadata/_custom_type_script = "uid://dr2f7i1l4k7ev"

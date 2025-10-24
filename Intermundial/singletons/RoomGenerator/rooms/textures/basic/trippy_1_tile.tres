@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cl1cdkgg66fv2"]
+
+[ext_resource type="Texture2D" uid="uid://cv5ylixaubh63" path="res://singletons/RoomGenerator/rooms/textures/raw_imgs/trippy_tile.png" id="1_7uwv6"]
+
+[resource]
+albedo_texture = ExtResource("1_7uwv6")
+uv1_world_triplanar = true
+texture_filter = 0

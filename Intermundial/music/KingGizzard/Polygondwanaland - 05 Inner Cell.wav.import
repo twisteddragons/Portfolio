@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://mi21xf65fkdm"
+path="res://.godot/imported/Polygondwanaland - 05 Inner Cell.wav-8054c3a4b5e726150f205984d3ffc18d.sample"
+
+[deps]
+
+source_file="res://music/KingGizzard/Polygondwanaland - 05 Inner Cell.wav"
+dest_files=["res://.godot/imported/Polygondwanaland - 05 Inner Cell.wav-8054c3a4b5e726150f205984d3ffc18d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

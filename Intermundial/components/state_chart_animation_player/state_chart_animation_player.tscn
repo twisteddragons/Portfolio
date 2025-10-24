@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://vxjwq5d77csd"]
+
+[ext_resource type="Script" uid="uid://fwp4w8wm55t7" path="res://components/state_chart_animation_player/state_chart_animation_player.gd" id="1_ccnrb"]
+
+[node name="StateChartAnimationPlayer" type="AnimationPlayer"]
+script = ExtResource("1_ccnrb")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="animation_started" from="." to="." method="_on_animation_started"]

@@ -1,0 +1,342 @@
+[gd_scene load_steps=16 format=3 uid="uid://801wkesn0765"]
+
+[ext_resource type="Script" uid="uid://1nb31r6fqwng" path="res://scenes/UpgradeScreen/upgrade.gd" id="1_g1npk"]
+[ext_resource type="Shader" uid="uid://ckpiv04lna54j" path="res://common/shaders/upgrade.gdshader" id="2_346kr"]
+[ext_resource type="Texture2D" uid="uid://bx42pu21xwhw3" path="res://entities/bullets/basicbullet_front_prototype.png" id="2_g1npk"]
+[ext_resource type="Texture2D" uid="uid://bjuvddod1egxw" path="res://entities/player/hud/cyl/rev cyl.png" id="4_346kr"]
+[ext_resource type="Texture2D" uid="uid://bahg5dl78x48f" path="res://scenes/UpgradeScreen/SpgradeScreenSprites/casino.png" id="4_f3djv"]
+[ext_resource type="Texture2D" uid="uid://cdolkumkrpx3a" path="res://scenes/UpgradeScreen/SpgradeScreenSprites/pouch.png" id="5_apblt"]
+[ext_resource type="PackedScene" uid="uid://bghpq6u7kc2v4" path="res://scenes/UpgradeScreen/slot.tscn" id="6_7bfvc"]
+[ext_resource type="PackedScene" uid="uid://b6eifharxwj5g" path="res://scenes/UpgradeScreen/reserve_bullet.tscn" id="6_a751w"]
+[ext_resource type="Texture2D" uid="uid://b08d2ubehuxvd" path="res://entities/player/hud/hat/hat.png" id="7_a751w"]
+[ext_resource type="Resource" uid="uid://bywy2bd7wtnck" path="res://entities/bullets/shotgun_shell/shotgun_shell.tres" id="8_7bfvc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_00gwf"]
+shader = ExtResource("2_346kr")
+shader_parameter/resolution = Vector2(600, 400)
+shader_parameter/spiral_color = Color(0.947815, 0, 0.202917, 1)
+shader_parameter/frequency = 8.0
+shader_parameter/speed = 2.0
+shader_parameter/brightness = 5.0
+shader_parameter/balance = 0.5
+shader_parameter/octaves = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07e65"]
+bg_color = Color(0.203922, 0.101961, 0.0784314, 0.941176)
+corner_radius_top_left = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7bfvc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00gwf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tps3k"]
+bg_color = Color(0.0745098, 0.0745098, 0.0745098, 1)
+corner_radius_top_left = 150
+corner_radius_top_right = 150
+corner_radius_bottom_right = 150
+corner_radius_bottom_left = 150
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_g1npk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -5
+material = SubResource("ShaderMaterial_00gwf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -2
+offset_left = 103.0
+offset_top = 769.0
+offset_right = 1676.0
+offset_bottom = 982.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_07e65")
+
+[node name="ShopControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="bullet_shop" type="PanelContainer" parent="ShopControl"]
+custom_minimum_size = Vector2(800, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -802.0
+offset_top = -164.0
+offset_right = 784.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7bfvc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopControl/bullet_shop"]
+custom_minimum_size = Vector2(0, 145.96)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Bullet" type="PanelContainer" parent="ShopControl/bullet_shop/HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_00gwf")
+
+[node name="TextureButton" type="TextureButton" parent="ShopControl/bullet_shop/HBoxContainer/Bullet"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_g1npk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ShopControl/bullet_shop/HBoxContainer/Bullet"]
+custom_minimum_size = Vector2(110.92, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 74
+text = "1"
+
+[node name="Bullet2" type="PanelContainer" parent="ShopControl/bullet_shop/HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_00gwf")
+
+[node name="TextureButton" type="TextureButton" parent="ShopControl/bullet_shop/HBoxContainer/Bullet2"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_g1npk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ShopControl/bullet_shop/HBoxContainer/Bullet2"]
+custom_minimum_size = Vector2(110.92, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 74
+text = "1"
+
+[node name="Bullet3" type="PanelContainer" parent="ShopControl/bullet_shop/HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_00gwf")
+
+[node name="TextureButton" type="TextureButton" parent="ShopControl/bullet_shop/HBoxContainer/Bullet3"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_g1npk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ShopControl/bullet_shop/HBoxContainer/Bullet3"]
+custom_minimum_size = Vector2(110.92, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 74
+text = "1"
+
+[node name="TextureButton" type="TextureButton" parent="ShopControl"]
+layout_mode = 0
+offset_left = 892.0
+offset_top = 224.0
+offset_right = 1006.0
+offset_bottom = 338.0
+texture_normal = ExtResource("4_f3djv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ShopControl/TextureButton"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -42.0
+offset_right = 130.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 36
+text = "REROLL"
+horizontal_alignment = 1
+
+[node name="CylinderContainer" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -414.0
+offset_top = -369.0
+offset_right = -114.0
+offset_bottom = -69.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CylinderContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.463992
+pivot_offset = Vector2(150, 150)
+mouse_filter = 2
+texture = ExtResource("4_346kr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="CylinderContainer/TextureRect"]
+z_index = -1
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -77.5
+offset_right = 78.0
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tps3k")
+
+[node name="cyl" parent="CylinderContainer" instance=ExtResource("6_7bfvc")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="cyl2" parent="CylinderContainer" instance=ExtResource("6_7bfvc")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="cyl3" parent="CylinderContainer" instance=ExtResource("6_7bfvc")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="cyl4" parent="CylinderContainer" instance=ExtResource("6_7bfvc")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="cyl5" parent="CylinderContainer" instance=ExtResource("6_7bfvc")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="cyl6" parent="CylinderContainer" instance=ExtResource("6_7bfvc")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="reserve" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -3.0
+offset_right = 16.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="reserve"]
+layout_mode = 2
+offset_left = 373.0
+offset_top = 783.0
+offset_right = 1431.0
+offset_bottom = 968.0
+
+[node name="ReserveContainer" type="HBoxContainer" parent="reserve/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 145.96)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="reserve_bullet" parent="reserve/ScrollContainer/ReserveContainer" instance=ExtResource("6_a751w")]
+layout_mode = 2
+bullet_data = ExtResource("8_7bfvc")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+size_flags_horizontal = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control2"]
+texture_filter = 1
+position = Vector2(211, -141)
+scale = Vector2(2.85, 2.85)
+texture = ExtResource("5_apblt")
+
+[node name="Label2" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = -80.0
+offset_right = 281.0
+offset_bottom = -36.0
+theme_override_font_sizes/font_size = 31
+text = "RESERVE"
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = -189.0
+offset_right = 291.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 77
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HatControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Hat" type="Sprite2D" parent="HatControl"]
+texture_filter = 1
+position = Vector2(22, 345)
+rotation = 2.07871e-05
+scale = Vector2(2.31949, 1.9995)
+texture = ExtResource("7_a751w")

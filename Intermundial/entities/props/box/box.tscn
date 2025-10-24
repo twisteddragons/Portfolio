@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh4kvbtglii7r"]
+
+[ext_resource type="PackedScene" uid="uid://0rtmkxes5rcn" path="res://entities/props/box/box.glb" id="1_723ac"]
+[ext_resource type="Script" uid="uid://dnmws5o46tyjm" path="res://entities/props/BreakablePropLogic/breakable_prop_logic.gd" id="1_dof24"]
+[ext_resource type="PackedScene" uid="uid://dqf610iobui8f" path="res://effects/debris_spawner/debris_spawner_module.tscn" id="2_1roy3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_agys7"]
+
+[node name="Box" type="RigidBody3D" groups=["Damageable", "Effectable"]]
+process_mode = 1
+mass = 2.5
+script = ExtResource("1_dof24")
+debris_spawner = ExtResource("2_1roy3")
+
+[node name="box" parent="." instance=ExtResource("1_723ac")]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_agys7")

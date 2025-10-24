@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://lj3e8skkonb1"]
+
+[ext_resource type="PackedScene" uid="uid://cjptcfhbgwmre" path="res://singletons/RoomGenerator/rooms/room_logics/base_room/Room.tscn" id="1_rsffg"]
+[ext_resource type="PackedScene" uid="uid://bts8qc44ljmr6" path="res://singletons/RoomGenerator/rooms/room_logics/base_logic/exit.tscn" id="2_kg2t1"]
+[ext_resource type="PackedScene" uid="uid://ckmk4ai08o5mn" path="res://singletons/RoomGenerator/rooms/Blender_rooms/large_canyon/large_canyon.blend" id="2_nam1x"]
+[ext_resource type="PackedScene" uid="uid://didiptsyjywvr" path="res://singletons/RoomGenerator/rooms/room_logics/base_logic/entrance.tscn" id="4_21f07"]
+
+[node name="Room" instance=ExtResource("1_rsffg")]
+
+[node name="Exit" parent="." index="0" instance=ExtResource("2_kg2t1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.78626, 0, -69.3054)
+
+[node name="large_canyon" parent="." index="1" instance=ExtResource("2_nam1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64696, -0.249486, 0)
+
+[node name="Entrance" parent="." index="2" instance=ExtResource("4_21f07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.8452)

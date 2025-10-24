@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cerm0vdrvmhxv"]
+
+[ext_resource type="Texture2D" uid="uid://dise8km8yph3u" path="res://entities/props/tumbleweed/tumbleweed.png" id="1_yusn8"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("1_yusn8")
+texture_filter = 0

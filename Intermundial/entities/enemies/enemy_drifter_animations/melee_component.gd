@@ -1,0 +1,2 @@
+class_name MeleeComponent
+extends Area3D

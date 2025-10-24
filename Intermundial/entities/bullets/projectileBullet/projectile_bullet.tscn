@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgohim1aa7e1k"]
+
+[ext_resource type="Script" uid="uid://d2nfs02i5fu48" path="res://entities/bullets/projectileBullet/projectile_script.gd" id="1_dld8n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dld8n"]
+albedo_color = Color(0.835634, 0, 0.197675, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 6.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_rhkiw"]
+material = SubResource("StandardMaterial3D_dld8n")
+size = Vector3(2.66, 2.785, 0.79)
+
+[node name="ProjectileBullet" type="Node3D"]
+script = ExtResource("1_dld8n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_rhkiw")
+
+[node name="projectile_col" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -0.6)
+
+[node name="cleanup_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="cleanup_timer" to="." method="_on_cleanup_timer_timeout"]

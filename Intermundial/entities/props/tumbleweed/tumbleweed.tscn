@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfmqsj5v6w04i"]
+
+[ext_resource type="Material" uid="uid://cerm0vdrvmhxv" path="res://entities/props/tumbleweed/new_standard_material_3d.tres" id="1_k66mo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8ju4j"]
+radius = 0.461757
+
+[sub_resource type="SphereMesh" id="SphereMesh_8ju4j"]
+material = ExtResource("1_k66mo")
+
+[sub_resource type="SphereMesh" id="SphereMesh_evnhu"]
+material = ExtResource("1_k66mo")
+radius = 0.395
+height = 0.8
+
+[node name="Tumbleweed" type="RigidBody3D"]
+process_mode = 1
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_8ju4j")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.994064, 0.108797, 0, -0.108797, 0.994064, 0, 0, 0)
+mesh = SubResource("SphereMesh_8ju4j")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.873288, 0, 0.487204, 0.103083, 0.977361, 0.184771, -0.476174, 0.211581, -0.853517, 0.00151813, -0.079933, -0.000740647)
+mesh = SubResource("SphereMesh_evnhu")

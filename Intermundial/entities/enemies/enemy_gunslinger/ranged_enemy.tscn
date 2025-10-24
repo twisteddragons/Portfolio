@@ -1,0 +1,102 @@
+[gd_scene load_steps=18 format=3 uid="uid://c24trvfg6c6px"]
+
+[ext_resource type="Script" uid="uid://bcmuun3nf0u3i" path="res://entities/enemies/enemy_gunslinger/ranged_enemy.gd" id="1_sneck"]
+[ext_resource type="PackedScene" uid="uid://cgohim1aa7e1k" path="res://entities/bullets/projectileBullet/projectile_bullet.tscn" id="2_aabw3"]
+[ext_resource type="Script" uid="uid://bdkem4b0nsk77" path="res://entities/enemies/StateMachine/state_machine.gd" id="3_76bs3"]
+[ext_resource type="Texture2D" uid="uid://bk4lrp4p2m4n" path="res://Outdated/_OLD/art/red-dead-redemption-2-red-dead-redemption-undead-nightmare-xbox-360-video-game-rockstar-games-redemption-c28d5598f112d508c8c19ac39059deb1.png" id="3_aabw3"]
+[ext_resource type="Script" uid="uid://dmohrcysvhyr6" path="res://entities/enemies/StateMachine/states/chase_state.gd" id="4_sp62k"]
+[ext_resource type="Script" uid="uid://dru434x45d7qg" path="res://entities/enemies/StateMachine/states/idle_state.gd" id="5_xdmdr"]
+[ext_resource type="Script" uid="uid://cmng736e66k33" path="res://entities/enemies/StateMachine/states/shoot_state.gd" id="6_7hfyv"]
+[ext_resource type="Script" uid="uid://byafca8w8hv5p" path="res://entities/enemies/StateMachine/states/melee_state.gd" id="7_am88u"]
+[ext_resource type="Script" uid="uid://dsegieqspf2rn" path="res://entities/enemies/audio_manager.gd" id="8_ak372"]
+[ext_resource type="AudioStream" uid="uid://djh8a3cpwf37g" path="res://entities/enemies/voicelines/noah/getchu.mp3" id="14_aye5h"]
+[ext_resource type="AudioStream" uid="uid://c78gbyp8tlysb" path="res://entities/player/sounds/rev_gunshot.mp3" id="14_bx3is"]
+[ext_resource type="AudioStream" uid="uid://drug3thfq1km0" path="res://entities/enemies/voicelines/noah/HoOOIi.mp3" id="15_7qegn"]
+[ext_resource type="AudioStream" uid="uid://cjsyefnc8sugp" path="res://entities/enemies/voicelines/noah/liquorice.mp3" id="16_wv7th"]
+[ext_resource type="AudioStream" uid="uid://wxvp6ik1qgpw" path="res://entities/enemies/voicelines/noah/passwiss.mp3" id="17_i8o5p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m37v0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3c0b6"]
+radius = 9.57862
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vqnt6"]
+size = Vector3(2.92787, 1.92456, 2.12689)
+
+[node name="enemy" type="CharacterBody3D" node_paths=PackedStringArray("state_machine") groups=["enemy"]]
+process_mode = 1
+script = ExtResource("1_sneck")
+max_range = 40.0
+projectile = ExtResource("2_aabw3")
+ranged_cooldown = 1.1
+state_machine = NodePath("StateMachine")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_m37v0")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.353, 0, 0, 0, 0.271, 0, 0, 0, 0.48, 0, 0, 0)
+texture = ExtResource("3_aabw3")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="vison" type="Node3D" parent="."]
+
+[node name="detection_range" type="Area3D" parent="vison"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="vison/detection_range"]
+shape = SubResource("SphereShape3D_3c0b6")
+
+[node name="vision_raycast" type="RayCast3D" parent="vison"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.789227, 0)
+target_position = Vector3(0, 0, -100)
+
+[node name="vison_timer" type="Timer" parent="vison"]
+wait_time = 0.1
+autostart = true
+
+[node name="attack_stuff" type="Node3D" parent="."]
+
+[node name="melee_hurtbox" type="Area3D" parent="attack_stuff"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="attack_stuff/melee_hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0049057, 0.091377, 1.24138)
+shape = SubResource("BoxShape3D_vqnt6")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_76bs3")
+
+[node name="ChaseState" type="Node" parent="StateMachine"]
+script = ExtResource("4_sp62k")
+chase_speed = null
+metadata/_custom_type_script = "uid://dmohrcysvhyr6"
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("5_xdmdr")
+metadata/_custom_type_script = "uid://dru434x45d7qg"
+
+[node name="ShootState" type="Node" parent="StateMachine"]
+script = ExtResource("6_7hfyv")
+metadata/_custom_type_script = "uid://cmng736e66k33"
+
+[node name="MeleeState" type="Node" parent="StateMachine"]
+script = ExtResource("7_am88u")
+metadata/_custom_type_script = "uid://byafca8w8hv5p"
+
+[node name="Audio" type="Node3D" parent="."]
+script = ExtResource("8_ak372")
+voicelines = Array[Resource]([ExtResource("14_aye5h"), ExtResource("15_7qegn"), ExtResource("16_wv7th"), ExtResource("17_i8o5p")])
+
+[node name="voiceline_player" type="AudioStreamPlayer3D" parent="Audio"]
+volume_db = 8.602
+max_distance = 50.0
+
+[node name="voiceline_cooldown" type="Timer" parent="Audio"]
+
+[node name="gunshot" type="AudioStreamPlayer3D" parent="Audio"]
+stream = ExtResource("14_bx3is")
+
+[connection signal="body_entered" from="vison/detection_range" to="." method="_on_detection_range_body_entered"]
+[connection signal="timeout" from="vison/vison_timer" to="." method="_on_vison_timer_timeout"]
+[connection signal="finished" from="Audio/voiceline_player" to="Audio" method="_on_voiceline_player_finished"]
+[connection signal="timeout" from="Audio/voiceline_cooldown" to="Audio" method="_on_timer_timeout"]

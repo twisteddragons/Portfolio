@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv6qtc8g313sk"]
+
+[ext_resource type="PackedScene" uid="uid://caws2yfhmfpeb" path="res://singletons/RoomGenerator/rooms/RoomProps/GamePlay/Sign/Sign_1.blend" id="1_fl0xq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lv1kf"]
+size = Vector3(3.246704, 3.1176147, 0.4699402)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4suxp"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="Sign1" type="StaticBody3D"]
+
+[node name="Sign_1" parent="." instance=ExtResource("1_fl0xq")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21954346, 1.6865075, 0.04322815)
+shape = SubResource("BoxShape3D_lv1kf")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.155, 0, 0, 0, 0.155, 0, 0, 0, 0.155, 0.18084282, 2.1533957, 0.254117)
+texture = SubResource("ViewportTexture_4suxp")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+size = Vector2i(1912, 1107)
+
+[node name="Control" type="Control" parent="Sprite3D/SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Sprite3D/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.96214074, 0.94857436, 0.89458776, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sprite3D/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.055208333
+anchor_top = 0.06388889
+anchor_right = 0.95416665
+anchor_bottom = 0.9462963
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 66
+text = "YEEEEEEEEEEEEEEEEEHAAAAW!!!!
+welcome to INTERMUNDIAL 0.1
+- move with \"WASD\"
+- pick up objects with \"E\"
+- kick with \"F\"
+- cycle the revolver cylinder w scroll wheel.
+- diffrent bullets in your cyl will have diffrent effects.
+- bullets can be reloaded with \"R\" when you have no bullets in your cyl.
+Go get 'em partner"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

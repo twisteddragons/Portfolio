@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cernritrfen7b"]
+
+[ext_resource type="Texture2D" uid="uid://bd1vpmbfj4pdd" path="res://singletons/RoomGenerator/rooms/RoomProps/PhysicsProps/Bottle_1/beer_decal.png" id="1_yjgiy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1yhbu"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_yjgiy")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_qvogo"]
+material = SubResource("StandardMaterial3D_1yhbu")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ontvd"]
+size = Vector3(0.26281738, 1, 0.23046875)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_qvogo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0004272461, 0, -0.017578125)
+shape = SubResource("BoxShape3D_ontvd")

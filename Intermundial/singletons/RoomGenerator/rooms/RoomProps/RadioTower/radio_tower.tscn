@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxypmdn1iq55p"]
+
+[ext_resource type="PackedScene" uid="uid://drul3dp3c7la0" path="res://singletons/RoomGenerator/rooms/RoomProps/RadioTower/RadioTower.blend" id="1_ikbc6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fep0t"]
+size = Vector3(1, 20.808167, 1)
+
+[node name="RadioTower" type="StaticBody3D"]
+
+[node name="RadioTower" parent="." instance=ExtResource("1_ikbc6")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.431632, 0)
+shape = SubResource("BoxShape3D_fep0t")

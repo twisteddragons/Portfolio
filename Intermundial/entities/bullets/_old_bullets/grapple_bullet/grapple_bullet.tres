@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SpecialBullet" load_steps=5 format=3 uid="uid://15cdhwhqbw22"]
+
+[ext_resource type="Texture2D" uid="uid://cj57e7mebyreb" path="res://entities/bullets/bullet_sprites/bullet_back_grapple.png" id="1_8v405"]
+[ext_resource type="Script" uid="uid://dr2f7i1l4k7ev" path="res://entities/bullets/special_bullet_resource.gd" id="2_8v405"]
+[ext_resource type="Script" uid="uid://djkijm6vrf1sa" path="res://entities/bullets/_old_bullets/grapple_bullet/grapple_bullet.gd" id="2_xj8sc"]
+[ext_resource type="Texture2D" uid="uid://cqfep5b87ohsj" path="res://entities/bullets/bullet_sprites/bullet_front_grapple.png" id="4_8v405"]
+
+[resource]
+script = ExtResource("2_8v405")
+bullet_type = 5
+fire_type = 0
+projectile_gravity_scale = 0.0
+projectile_speed = 70.0
+damage = 10
+effect_script_queue = Array[Script]([])
+regular_effect_script_queue = Array[Script]([ExtResource("2_xj8sc")])
+side_sprite = ExtResource("4_8v405")
+back_sprite = ExtResource("1_8v405")
+fire_sound_uid = "uid://beclhyfvdkhxj"
+metadata/_custom_type_script = "uid://dr2f7i1l4k7ev"

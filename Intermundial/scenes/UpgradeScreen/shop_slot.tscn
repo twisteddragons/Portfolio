@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://vvad0xw4rnvu"]
+
+[ext_resource type="Script" uid="uid://ca8pw1tkcbk0u" path="res://scenes/UpgradeScreen/shop_slot.gd" id="1_3nw58"]
+[ext_resource type="Texture2D" uid="uid://cnkw6kri2nhh6" path="res://entities/player/hud/cyl/basicbullet_prototype.png" id="2_oq217"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchor_right = 0.15625
+anchor_bottom = 0.277778
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 150)
+script = ExtResource("1_3nw58")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 300.0
+pivot_offset = Vector2(150, 150)
+texture = ExtResource("2_oq217")
+
+[node name="PriceTag" type="Label" parent="TextureRect"]
+custom_minimum_size = Vector2(110.92, 0)
+layout_mode = 2
+offset_left = 189.08
+offset_right = 300.0
+offset_bottom = 102.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 74
+text = "1"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://uhixp0gnajfo"]
+
+[ext_resource type="PackedScene" uid="uid://b2wbv3aslcgft" path="res://singletons/RoomGenerator/rooms/RoomProps/RadioDish/RadioDish.blend" id="1_18vmv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m2kfe"]
+height = 0.68670654
+radius = 2.4765625
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6xxb2"]
+height = 1.1801147
+radius = 0.8334961
+
+[node name="RadioDish" type="StaticBody3D"]
+
+[node name="RadioDish" parent="." instance=ExtResource("1_18vmv")]
+
+[node name="Cylinder_012" parent="RadioDish/sat_1" index="0"]
+transform = Transform3D(1.2185914e-07, 9.678823, 5.769029e-07, -7.036138, -3.0755933e-07, 6.646232, 6.646232, -5.030644e-07, 7.036138, 0, 2.0013647, 1.4589255e-05)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RadioDish/sat_1/Cylinder_012" index="0"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RadioDish/sat_1/Cylinder_012/StaticBody3D"]
+transform = Transform3D(9.949824e-09, 0.030415386, 0.78969324, 0.79027903, -4.745234e-08, -8.13038e-09, 4.71043e-08, 0.78969324, -0.030415386, -0.905936, -5.343709e-08, 1.0878868)
+shape = SubResource("CylinderShape3D_m2kfe")
+
+[node name="AnimationPlayer" parent="RadioDish" index="1"]
+autoplay = "Cylinder_012Action"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3294373, 0)
+shape = SubResource("CylinderShape3D_6xxb2")
+
+[editable path="RadioDish"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://efsj57rclmyc"]
+
+[ext_resource type="Script" uid="uid://elp68ayvadk" path="res://singletons/RoomGenerator/rooms/room_logics/doors/door.gd" id="1_6nj57"]
+[ext_resource type="Material" uid="uid://bb7tb76ave7g1" path="res://singletons/RoomGenerator/rooms/textures/triplanar/trippy_1_triplane.tres" id="2_os8pp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_csdba"]
+size = Vector3(4, 5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7hv7u"]
+size = Vector3(4, 5, 1)
+
+[node name="AnimatableBody3D" type="AnimatableBody3D"]
+script = ExtResource("1_6nj57")
+open_offset = Vector3(0, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51, 0)
+shape = SubResource("BoxShape3D_csdba")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51032, 0)
+material_override = ExtResource("2_os8pp")
+mesh = SubResource("BoxMesh_7hv7u")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

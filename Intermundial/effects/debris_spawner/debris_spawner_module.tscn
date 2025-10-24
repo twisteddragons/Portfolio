@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqf610iobui8f"]
+
+[ext_resource type="Script" uid="uid://dtv20xgyrei6x" path="res://effects/debris_spawner/debris_spawner.gd" id="1_7hyk1"]
+[ext_resource type="PackedScene" uid="uid://bt6n20d1lgkgq" path="res://effects/debris_spawner/debris_scenes/wood_debris.tscn" id="2_0kj3l"]
+[ext_resource type="AudioStream" uid="uid://wby1ondovt0e" path="res://entities/player/sounds/glass-breaking-sound-effect-240679.mp3" id="3_ppeun"]
+[ext_resource type="Texture2D" uid="uid://cal4pe3onvrgy" path="res://effects/debris_spawner/debris_scenes/wood_shard.png" id="4_8jnjv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ppeun"]
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, 1, 0)
+spread = 25.482
+initial_velocity_min = 3.0
+initial_velocity_max = 8.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppeun"]
+transparency = 1
+diffuse_mode = 3
+albedo_texture = ExtResource("4_8jnjv")
+texture_filter = 0
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_8jnjv"]
+material = SubResource("StandardMaterial3D_ppeun")
+size = Vector2(0.6, 0.6)
+
+[node name="debris_spawner" type="Node3D"]
+script = ExtResource("1_7hyk1")
+debris_scene = ExtResource("2_0kj3l")
+spawn_count = 2
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_ppeun")
+volume_db = -13.714
+
+[node name="break_particles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.209012, 0)
+emitting = false
+amount = 3
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ppeun")
+draw_pass_1 = SubResource("QuadMesh_8jnjv")

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://co036pw7f5sn7"]
+
+[ext_resource type="Texture2D" uid="uid://ktgjd8ddu5vn" path="res://singletons/RoomGenerator/rooms/textures/raw_imgs/rusty_tile.png" id="1_q5wkj"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_q5wkj")
+uv1_world_triplanar = true
+texture_filter = 0

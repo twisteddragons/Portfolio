@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4cj4qt0dpq4s"]
+
+[ext_resource type="Script" uid="uid://c1v76n6skc2u1" path="res://singletons/RoomGenerator/rooms/room_logics/spawners/enemy_spawn_point.gd" id="1_0rs1e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2f56e"]
+albedo_color = Color(0.907532, 0, 0.170907, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_o8uc5"]
+material = SubResource("StandardMaterial3D_2f56e")
+
+[node name="SpawnerNode" type="Node3D"]
+script = ExtResource("1_0rs1e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_o8uc5")

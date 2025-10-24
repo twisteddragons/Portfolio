@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cij0gxrewyakb"]
+
+[ext_resource type="Texture2D" uid="uid://dwppduqvsb1eh" path="res://singletons/RoomGenerator/rooms/textures/raw_imgs/rockface.png" id="1_3cx0k"]
+
+[resource]
+albedo_texture = ExtResource("1_3cx0k")
+uv1_world_triplanar = true
+texture_filter = 0

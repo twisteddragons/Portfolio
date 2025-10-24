@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://jw41ei7cvyr"]
+
+[ext_resource type="Texture2D" uid="uid://q5kvvo45kmwg" path="res://entities/player/hud/upgradeScreen/rope.png" id="1_pcdsr"]
+[ext_resource type="Texture2D" uid="uid://5qdqly3lved" path="res://entities/items/itemSprites/test_trinket.png" id="3_waop4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u37te"]
+radius = 1.2934
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssgi7"]
+size = Vector2(4, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rtlkk"]
+radius = 31.0
+
+[node name="Item_root" type="Node2D"]
+rotation = 2.07871e-05
+
+[node name="rope_root" type="StaticBody2D" parent="."]
+position = Vector2(-1.3157e-05, 3.17265e-10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rope_root"]
+shape = SubResource("CircleShape2D_u37te")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(1.37288e-05, 1.50038)
+node_a = NodePath("../rope_root")
+node_b = NodePath("../RopeSegment")
+
+[node name="RopeSegment" type="RigidBody2D" parent="."]
+position = Vector2(0.000179239, 10.0025)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RopeSegment"]
+position = Vector2(-0.0978088, 6.7806)
+shape = SubResource("RectangleShape2D_ssgi7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RopeSegment/CollisionShape2D"]
+texture_filter = 1
+position = Vector2(-0.0315548, -0.385439)
+scale = Vector2(1.69212, 1.30931)
+texture = ExtResource("1_pcdsr")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(-0.0973275, 32.066)
+node_a = NodePath("../RopeSegment")
+node_b = NodePath("../RopeSegment3")
+
+[node name="RopeSegment3" type="RigidBody2D" parent="."]
+position = Vector2(-0.0971069, 43.066)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RopeSegment3"]
+position = Vector2(0.000152588, 7)
+shape = SubResource("RectangleShape2D_ssgi7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RopeSegment3/CollisionShape2D"]
+texture_filter = 1
+position = Vector2(-0.0315548, 0.119141)
+scale = Vector2(1.69212, 1.44552)
+texture = ExtResource("1_pcdsr")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(-0.0966186, 66.066)
+node_a = NodePath("../RopeSegment3")
+node_b = NodePath("../RopeSegment2")
+
+[node name="RopeSegment2" type="RigidBody2D" parent="."]
+position = Vector2(-0.0971326, 41.066)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RopeSegment2"]
+position = Vector2(-0.0977783, 41.9999)
+shape = SubResource("RectangleShape2D_ssgi7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RopeSegment2/CollisionShape2D"]
+texture_filter = 1
+position = Vector2(-0.0315548, -1.60585)
+scale = Vector2(1.69212, 1.16036)
+texture = ExtResource("1_pcdsr")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(-0.0960006, 96.066)
+node_a = NodePath("../RopeSegment2")
+node_b = NodePath("../item/ItemRigid")
+
+[node name="item" type="Node2D" parent="."]
+position = Vector2(-0.0964787, 73.066)
+
+[node name="ItemRigid" type="RigidBody2D" parent="item"]
+position = Vector2(-2.77645e-06, -7.62939e-06)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item/ItemRigid"]
+position = Vector2(0.000498891, 24)
+shape = SubResource("CircleShape2D_rtlkk")
+
+[node name="Sprite2D" type="Sprite2D" parent="item/ItemRigid"]
+texture_filter = 1
+position = Vector2(0.000478104, 23)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("3_waop4")

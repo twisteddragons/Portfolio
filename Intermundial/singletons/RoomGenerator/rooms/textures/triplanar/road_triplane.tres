@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dgk17flg75q6d"]
+
+[ext_resource type="Texture2D" uid="uid://dluir17bqrxv4" path="res://singletons/RoomGenerator/rooms/textures/raw_imgs/ashfault.png" id="1_4mmde"]
+
+[resource]
+albedo_texture = ExtResource("1_4mmde")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0

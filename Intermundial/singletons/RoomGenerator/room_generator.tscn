@@ -1,0 +1,120 @@
+[gd_scene load_steps=19 format=3 uid="uid://d8txut18hr2s"]
+
+[ext_resource type="Script" uid="uid://c523eb8hw3pcj" path="res://scenes/main/main.gd" id="1_neio4"]
+[ext_resource type="Script" uid="uid://dalqhcdypsjcc" path="res://singletons/RoomGenerator/room_generator.gd" id="1_vy60t"]
+[ext_resource type="PackedScene" uid="uid://c42bgwbqdg6ur" path="res://singletons/RoomGenerator/rooms/Blender_rooms/spawn_room/spawn_room.tscn" id="3_gakjp"]
+[ext_resource type="PackedScene" uid="uid://b41mgp8e0gmqm" path="res://singletons/RoomGenerator/rooms/Blender_rooms/exit_map/exit_map.tscn" id="4_neio4"]
+[ext_resource type="Shader" uid="uid://deum3lnc6fs7m" path="res://common/shaders/main.gdshader" id="6_fhanv"]
+[ext_resource type="PackedScene" uid="uid://c8r7wp06f77cw" path="res://singletons/RoomGenerator/rooms/Blender_rooms/corridoor/Room_corridor.tscn" id="6_l8wdq"]
+[ext_resource type="PackedScene" uid="uid://b4fps0473xyph" path="res://singletons/RoomGenerator/rooms/Blender_rooms/floating_rock_map/Room_floatingrock.tscn" id="7_85kbm"]
+[ext_resource type="Shader" uid="uid://dcq8mrbbo0qyr" path="res://KillFloor.gdshader" id="7_neio4"]
+[ext_resource type="Texture2D" uid="uid://bnhl4elu0ebm8" path="res://singletons/RoomGenerator/rooms/textures/raw_imgs/sfsf1.jpg" id="8_neio4"]
+[ext_resource type="PackedScene" uid="uid://dkdhcmfe38trp" path="res://singletons/RoomGenerator/rooms/Blender_rooms/pit_map/Room_pit.tscn" id="8_wlvis"]
+[ext_resource type="PackedScene" uid="uid://bu4a0bqhlfi5c" path="res://singletons/RoomGenerator/rooms/Blender_rooms/arena1_map/arena1_map.tscn" id="10_85kbm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qd5ut"]
+shader = ExtResource("6_fhanv")
+shader_parameter/spin_rotation = 1.745
+shader_parameter/spin_speed = 1.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(0.2, 0.1, 0.5, 1)
+shader_parameter/colour_2 = Color(0.964098, 0.617009, 0, 1)
+shader_parameter/colour_3 = Color(0.609221, 0.239771, 0, 1)
+shader_parameter/contrast = 2.555
+shader_parameter/spin_amount = 0.36
+shader_parameter/sun_elevation = 27.175
+shader_parameter/sun_azimuth = 203.4
+shader_parameter/use_manual_sun_position = true
+shader_parameter/sun_color = Color(0.952976, 1, 0.40661, 1)
+shader_parameter/sun_radius = 0.601
+shader_parameter/flat_sun = true
+
+[sub_resource type="Sky" id="Sky_85kbm"]
+sky_material = SubResource("ShaderMaterial_qd5ut")
+
+[sub_resource type="Environment" id="Environment_l8wdq"]
+background_mode = 2
+background_energy_multiplier = 1.5
+sky = SubResource("Sky_85kbm")
+sky_rotation = Vector3(0.685914, -1.59872, 0)
+ambient_light_source = 3
+ambient_light_color = Color(0.129053, 0.116052, 0.105725, 1)
+ambient_light_sky_contribution = 0.15
+ambient_light_energy = 0.98
+tonemap_mode = 2
+tonemap_exposure = 1.3
+ssao_enabled = true
+ssao_intensity = 4.5
+sdfgi_cascades = 2
+sdfgi_min_cell_size = 0.4
+sdfgi_y_scale = 0
+sdfgi_energy = 0.2
+glow_enabled = true
+glow_intensity = 2.69
+glow_strength = 0.85
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[sub_resource type="Animation" id="Animation_85kbm"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wlvis"]
+_data = {
+&"new_animation": SubResource("Animation_85kbm")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnyjb"]
+render_priority = 0
+shader = ExtResource("7_neio4")
+shader_parameter/tint_color = Color(0.13850144, 0.00035406183, 0.24268717, 1)
+shader_parameter/color_1 = Color(0.5835098, 0.003939213, 0.9577475, 1)
+shader_parameter/color_2 = Color(0.9729684, 0.46326548, 0, 1)
+shader_parameter/color_3 = Color(0.32173374, 4.2114408e-07, 0.172896, 1)
+shader_parameter/caustics = ExtResource("8_neio4")
+shader_parameter/slowdown = 10.0
+shader_parameter/time_caust = 0.05999999865888
+shader_parameter/caust_form = 0.06999999843536
+shader_parameter/tile = 16.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1d7jj"]
+material = SubResource("ShaderMaterial_hnyjb")
+size = Vector2(10000, 10000)
+subdivide_width = 3
+subdivide_depth = 3
+
+[node name="Root" type="Node3D"]
+script = ExtResource("1_neio4")
+
+[node name="RoomGenerator" type="Node3D" parent="." groups=["Effectable"]]
+script = ExtResource("1_vy60t")
+start_room = ExtResource("3_gakjp")
+end_room = ExtResource("4_neio4")
+room_scenes = Array[PackedScene]([ExtResource("10_85kbm"), ExtResource("6_l8wdq"), ExtResource("7_85kbm"), ExtResource("8_wlvis")])
+
+[node name="Environment2" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment2"]
+environment = SubResource("Environment_l8wdq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment2/WorldEnvironment"]
+transform = Transform3D(-0.578792, -0.815402, 0.0108921, -0.486502, 0.355989, 0.797865, -0.654458, 0.456499, -0.602738, 0, 8.02786, 0)
+light_color = Color(0.916592, 0.843778, 0.813612, 1)
+light_energy = 3.0
+light_specular = 0.0
+shadow_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wlvis")
+}
+
+[node name="RespawnManager" type="Node3D" parent="."]
+
+[node name="kill_floor" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50.18393, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="kill_floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27.780754, 0)
+visible = false
+mesh = SubResource("PlaneMesh_1d7jj")
