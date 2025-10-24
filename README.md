@@ -12,6 +12,14 @@ A short horror visual novel made in about a month for a horror game history clas
 
 ## Untitled Puzzle Platformer
 
-Inspired by Nintendo's [_Kuru Kuru Kururin_](https://en.wikipedia.org/wiki/Kuru_Kuru_Kururin).
+Inspired by Nintendo's [_Kuru Kuru Kururin_](https://en.wikipedia.org/wiki/Kuru_Kuru_Kururin). Move through levels without touching the walls.
+
+Still in development.
+
+## Intermundial
+
+A trippy space western first person shooter. Deckbuilder if the deck were a pouch full of bullets.
+
+A group project with some of my friends.
 
 Still in development.
