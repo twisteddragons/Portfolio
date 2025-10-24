@@ -4,7 +4,7 @@
 
 Inspired by the Nintendo puzzle game Kuru Kuru Kururin for the Game Boy Advance. 
 
-Development is in progress as of July 6th, 2025. No playable demo yet.
+Development is in progress as of October 24th, 2025. No playable demo yet.
 
 Completed aspects include custom collision detection, tilemaps, progress and settings saving, collectables, color-swap shaders for multiple skins, and a handful of interactable objects.
 
